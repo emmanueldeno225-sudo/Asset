@@ -115,7 +115,7 @@ function relever() {
     const rects = [...r.getClientRects()].filter(q => q.width > 0.5 && q.height > 0.5);
     if (!rects.length) continue;
     if (!blocs.has(b)) blocs.set(b, { el: b, rects: [], texte: '', tailles: [], feuilles: [] });
-    const o = blocs.get(b); o.rects.push(...rects); o.texte += n.nodeValue; o.tailles.push(parseFloat(s.fontSize)); o.feuilles.push(p);
+    const o = blocs.get(b); o.rects.push(...rects); o.texte += (o.texte && !/\s$/.test(o.texte) && !/^\s/.test(n.nodeValue) && n.previousSibling && n.previousSibling.nodeName === 'BR' ? ' ' : '') + n.nodeValue; o.tailles.push(parseFloat(s.fontSize)); o.feuilles.push(p);
   }
   const liste = [];
   for (const o of blocs.values()) {
@@ -296,7 +296,9 @@ async function preparer(page, fichierUrl) {
         if (r.fatal) { console.log('  ✗ ' + r.fatal); bloquant = true; await c1.close(); continue; }
         erreurs.push(...r.erreurs); alertes.push(...r.alertes);
         const normal = await toile.screenshot({ type: 'png' });
-        await p1.addStyleTag({ content: '.affiche *{color:transparent !important;-webkit-text-fill-color:transparent !important;text-shadow:none !important;-webkit-text-stroke-color:transparent !important}.degrade-texte,.metal-argent,.metal-or,.texte-3d{background-image:none !important}.affiche [data-ic] svg, .affiche .puce svg{visibility:hidden}' });
+        // on efface seulement le remplissage des lettres : « color » reste intact, car les formes du kit
+        // (vagues, badges, pinceaux) se colorent avec currentColor et doivent rester dans le fond mesuré
+        await p1.addStyleTag({ content: '.affiche *{-webkit-text-fill-color:transparent !important;text-shadow:none !important;-webkit-text-stroke-color:transparent !important}.degrade-texte,.metal-argent,.metal-or,.texte-3d{background-image:none !important}' });
         const sans = await toile.screenshot({ type: 'png' });
         const pa = await c1.newPage(); await pa.goto('about:blank');
         const px = await analyserPixels(pa, normal, sans, r.blocs.filter(b => !b.libre), Math.round(r.W), Math.round(r.H));

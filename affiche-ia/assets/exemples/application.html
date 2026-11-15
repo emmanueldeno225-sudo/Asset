@@ -1,0 +1,64 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Application Livra</title>
+<link rel="stylesheet" href="{{KIT}}/kit/affiche.css">
+<style>
+.affiche{--fond:#0E3B43;--fond2:#092A30;--primaire:#0E3B43;--accent:#FF6B4A;--accent2:#FFC857;--clair:#FFFFFF;--encre:#0B2A30;
+  --f-titre:'Plus Jakarta Sans';--f-texte:'Plus Jakarta Sans';--rayon:38px}
+.ligne-app{display:flex;align-items:center;gap:12px;padding:12px;border-radius:16px;background:#F3F6F6}
+.ligne-app i{width:46px;height:46px;border-radius:12px;display:block;flex:none}
+.ligne-app b{display:block;font-size:15px;line-height:1.1}.ligne-app span{font-size:12px;color:#6a7c80}
+</style></head><body>
+<div class="affiche f45">
+  <div class="fond fond-degrade" style="--angle:170deg"></div>
+  <div class="calque" data-motif="vagues" style="color:rgba(255,255,255,.045)"></div>
+  <div class="lueur" style="--couleur:#1f6f7d;--d:700px;left:420px;top:240px;--force:.55;--flou:80px"></div>
+  <div class="grain" style="--force:.12"></div>
+
+  <!-- mot géant vertical -->
+  <div class="titre maj w9 vertical abs" data-bord style="right:-34px;top:-30px;font-size:236px;color:#fff;font-family:'Archivo';font-stretch:112%;letter-spacing:-.02em">Livra</div>
+
+  <!-- logo -->
+  <div class="logo-texte" style="left:64px;top:60px;font-size:36px"><span class="ic-carre" data-ic="moped" style="--d:58px;--ic-fond:#FF6B4A;--ic-couleur:#fff"></span>Livra</div>
+
+  <!-- téléphone -->
+  <div class="mk-telephone z5" style="--l:440px;left:500px;top:190px;--rot:8deg;--tranche:#d9b98a">
+    <div class="ecran" data-libre style="font-family:Inter;padding:64px 22px 0;background:#fff">
+      <span style="font-size:14px;color:#6a7c80">Bonjour,</span><b style="display:block;font-size:26px;letter-spacing:-.02em">Aïcha 👋</b>
+      <div style="margin-top:14px;height:44px;border-radius:999px;background:#F0F3F3;display:flex;align-items:center;padding:0 16px;font-size:14px;color:#8a9a9d">Chercher un plat, un magasin…</div>
+      <div style="margin-top:16px;border-radius:20px;padding:18px;background:linear-gradient(120deg,#FF6B4A,#FFB15C);color:#fff"><b style="font-size:19px;line-height:1.1;display:block">Livraison offerte</b><span style="font-size:13px;opacity:.9">sur ta première commande</span></div>
+      <b style="display:block;font-size:17px;margin:18px 0 10px">Près de toi</b>
+      <div style="display:grid;gap:10px">
+        <div class="ligne-app"><i style="background:#FFD9B8"></i><div><b>Chez Tantie Rose</b><span>Garba · 15 min</span></div></div>
+        <div class="ligne-app"><i style="background:#CFE9D6"></i><div><b>Marché Frais</b><span>Courses · 25 min</span></div></div>
+        <div class="ligne-app"><i style="background:#D6DCF7"></i><div><b>Pharmacie du Plateau</b><span>Santé · 20 min</span></div></div>
+        <div class="ligne-app"><i style="background:#F7D6E4"></i><div><b>La Brioche Dorée</b><span>Boulangerie · 18 min</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- cartes collées au bord gauche -->
+  <div class="panneau carte abs z4" data-bord style="left:0;top:300px;width:600px;border-radius:0 44px 44px 0;--pad:44px 44px 44px 64px">
+    <div class="titre w8" style="font-size:64px;line-height:1.04;letter-spacing:-.03em;color:#0E3B43;width:400px">Tout livré chez toi en <span style="color:#FF6B4A;white-space:nowrap">30 minutes</span></div>
+  </div>
+  <div class="panneau abs z4" data-bord style="left:0;top:660px;width:540px;border-radius:0 34px 34px 0;--pad:30px 36px 30px 64px;background:#FFC857;color:#0B2A30;box-shadow:0 22px 44px -22px rgba(0,0,0,.5)">
+    <div class="w6" style="font-size:26px;line-height:1.28;width:390px">Repas, courses, pharmacie : commande en trois gestes, suis ton livreur en direct.</div>
+  </div>
+
+  <div class="pile g16 abs z4" style="left:64px;top:880px;align-items:flex-start">
+    <span class="store"><i class="ic" data-ic="m:apple"></i><span><small>Télécharger dans</small><b>l'App Store</b></span></span>
+    <span class="store"><i class="ic" data-ic="m:googleplay"></i><span><small>Disponible sur</small><b>Google Play</b></span></span>
+  </div>
+  <div class="note abs z4" style="left:64px;top:1064px;font-size:24px"><span class="etoiles" data-note="4.5" style="--taille:30px"></span><span>4,7 sur 5</span></div>
+
+  <img class="deco3d z6 flou1" src="{{KIT}}/3d/colis.png" style="--d:170px;left:440px;top:1010px;--rot:-12deg">
+  <img class="deco3d z6 flou2" src="{{KIT}}/3d/burger.png" style="--d:210px;left:930px;top:930px;--rot:14deg">
+
+  <!-- pied -->
+  <div class="rang abs z6" style="left:64px;right:64px;bottom:60px;justify-content:space-between">
+    <div class="rang g24" style="font-size:24px;font-weight:600">
+      <span class="contact" style="gap:10px"><span class="ic-rond" data-ic="m:instagram" style="--d:44px;--ic-fond:#FFC857"></span>@livra.app</span>
+      <span class="contact" style="gap:10px"><span class="ic-rond" data-ic="m:tiktok" style="--d:44px;--ic-fond:#FFC857"></span>@livra.app</span>
+    </div>
+    <span class="url" style="font-size:25px;background:#FFC857"><span class="ic-rond" data-ic="globe:bold" style="--ic-fond:#0B2A30;--ic-couleur:#FFC857"></span><span>www.livra.app</span><span class="ic-rond" data-ic="magnifying-glass:bold" style="--ic-fond:#0B2A30;--ic-couleur:#FFC857"></span></span>
+  </div>
+</div>
+<script src="{{KIT}}/kit/kit.js"></script></body></html>
