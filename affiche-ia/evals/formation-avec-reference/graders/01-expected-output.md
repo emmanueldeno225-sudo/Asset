@@ -1,0 +1,7 @@
+---
+type: llm
+focus: trace
+weight: 1
+---
+
+The result matches this description: Une image PNG 4:5 est livrée, rendue par scripts/rendre.js sans défaut bloquant. Elle reprend la palette noir et or et la voix de la référence, avec une autre mise en page, sans la silhouette d'attente ni aucun visage ni logo de la référence. Le titre, les quatre contenus, les deux prix (ancien barré) et le numéro WhatsApp sont exacts. Aucun chiffre ni avis inventé. La réponse dit ce qui a été gardé de la référence et ce qui a changé.

@@ -1,0 +1,72 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Atelier pâtisserie</title>
+<link rel="stylesheet" href="{{KIT}}/kit/affiche.css">
+<style>
+/* ADN repris de la référence : bordeaux profond, rouge vif, crème et saumon ; Poppins très gras ; trait de pinceau ; bloc date.
+   Changé : pas de personne → composition sans photo, panneau « programme » à droite, socle crème avec prix et réservation. */
+.affiche{--fond:#5A0606;--fond2:#2A0303;--primaire:#8E1010;--accent:#FF5A45;--accent2:#FFC9A8;--clair:#F6E9D8;--encre:#2A0605;
+  --f-titre:'Poppins';--f-texte:'Poppins';--rayon:34px}
+</style></head><body>
+<div class="affiche f45">
+  <!-- fond -->
+  <div class="fond fond-radial" style="--px:76%;--py:24%;--taille:58%;--lueur:#B01818"></div>
+  <div class="motif-ondes" style="--px:84%;--py:20%;--motif:rgba(255,255,255,.05)"></div>
+  <div class="grain" style="--force:.16"></div>
+
+  <!-- en-tête -->
+  <div class="logo-texte" style="left:64px;top:58px;font-size:28px"><span class="ic-anneau" data-ic="cake" style="--d:58px"></span><span>Douceurs d'Aya<small>Pâtisserie maison · Abidjan</small></span></div>
+  <span class="pilule abs" style="right:64px;top:64px;font-size:23px;background:var(--clair);color:var(--encre)"><i class="ic" data-ic="users-three"></i>12 places seulement</span>
+
+  <!-- titre -->
+  <div class="abs z4" style="left:64px;top:176px;width:640px">
+    <span class="surtitre" style="color:var(--accent2);font-size:24px;letter-spacing:.3em">Une journée, cinq recettes</span>
+    <div class="titre w9" style="font-size:128px;letter-spacing:-.045em;line-height:.86;margin-top:14px"><span style="color:#FFE4D6">Atelier</span><br><span class="c-accent">pâtisserie</span></div>
+    <span class="trait-pinceau" data-forme="2" style="--l:430px;--h:40px;--couleur:#FFC9A8;margin-top:14px"></span>
+  </div>
+
+  <!-- décor : le gâteau net, le reste flou (profondeur de champ) -->
+  <div class="lueur z1" style="--couleur:#FF7A5C;--d:420px;left:700px;top:150px;--force:.45;--flou:50px"></div>
+  <img class="deco3d z3" src="{{KIT}}/3d/gateau.png" style="--d:270px;left:760px;top:170px;--rot:8deg">
+  <img class="deco3d z2 flou1" src="{{KIT}}/3d/pain.png" style="--d:150px;left:660px;top:120px;--rot:-18deg">
+  <img class="deco3d z5 flou2" data-bord src="{{KIT}}/3d/poele.png" style="--d:240px;right:-90px;top:860px;--rot:20deg">
+
+  <!-- date -->
+  <div class="abs z4" style="left:64px;top:548px">
+    <div class="bloc-date" style="--taille:112px;--annee:#C81E1E">
+      <span class="petit">Samedi</span>
+      <span class="jour">20 déc.</span>
+      <span class="annee">2026</span>
+    </div>
+    <div class="titre w8" style="font-size:54px;letter-spacing:-.03em;margin-top:30px">de 9&nbsp;h à 16&nbsp;h</div>
+    <div class="rang g12" style="margin-top:22px;align-items:flex-start;width:420px">
+      <i class="ic" data-ic="map-pin" style="font-size:40px;color:var(--accent2);margin-top:2px"></i>
+      <div class="w4" style="font-size:26px;line-height:1.28"><b>Cocody Riviera 2</b>, à côté de la pharmacie Sainte-Marie</div>
+    </div>
+  </div>
+
+  <!-- programme -->
+  <div class="panneau contour bord-lumineux abs z4" style="left:548px;top:560px;width:468px;--pad:58px 34px 34px;background:rgba(0,0,0,.18)">
+    <span class="onglet pilule" style="font-size:24px;background:var(--accent);color:#2A0605">Au programme</span>
+    <ul class="liste" data-puce="check-rond" style="font-size:26px;--tp:1.1em;--gap:18px;--puce:#FFC9A8;--sur-puce:#2A0605">
+      <li>Gâteau marbré moelleux</li>
+      <li>Cupcakes décorés</li>
+      <li>Fraisier à la crème</li>
+      <li>Tarte au citron meringuée</li>
+      <li>Glaçages et finitions</li>
+    </ul>
+  </div>
+
+  <!-- socle -->
+  <div class="socle arc z6" style="--h:300px;--courbe:70px"></div>
+  <div class="abs z7 rang" style="left:64px;right:64px;bottom:62px;justify-content:space-between;align-items:flex-end;color:var(--encre)">
+    <div class="pile g12">
+      <span class="w6" style="font-size:24px;color:#6b3a33">Participation, matériel fourni</span>
+      <span class="prix-geant" style="--taille:96px;color:#5A0606">15&nbsp;000<span class="devise" style="font-size:.34em;font-weight:800">&nbsp;FCFA</span></span>
+    </div>
+    <div class="pile g12" style="align-items:flex-end">
+      <span class="cta" style="font-size:29px;background:#5A0606;color:#fff;padding:.5em 1.2em .5em .5em"><span class="ic-rond" data-ic="m:whatsapp" style="--d:54px;--ic-fond:#25D366;--ic-couleur:#fff"></span>Réserve ta place</span>
+      <span class="w8" style="font-size:32px;letter-spacing:-.01em">+225 07 00 00 00 01</span>
+      <span class="contact w5" style="font-size:23px;gap:8px;color:#6b3a33"><i class="ic" data-ic="m:instagram"></i>@douceurs.daya</span>
+    </div>
+  </div>
+</div>
+<script src="{{KIT}}/kit/kit.js"></script></body></html>

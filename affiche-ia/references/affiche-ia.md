@@ -214,7 +214,7 @@ Le titre est 3 à 4 fois plus gros que le texte courant : c'est cet écart qui f
 | P08 | Carte d'étape | Numéro dans un disque, filet vertical, texte avec mots en gras | 10 | `.etape` > `.num` + `.sep` + texte |
 | P09 | Bento | Cartes colorées juxtaposées avec 20–24 px d'écart | 17 | `.bento` |
 | P10 | Carte penchée | Carte blanche tournée de 6–8°, qui flotte près du produit | 19 | `.carte.incline` (`--rot`) |
-| P11 | Bloc date | Jour en très gros sur pavé clair, petite étiquette du jour au-dessus, année en étiquette penchée | 05 | `.bloc-date` > `.petit` `.jour` `.annee` |
+| P11 | Bloc date | Jour en très gros sur pavé clair, petite étiquette du jour au-dessus, année en étiquette penchée | 05 | `.bloc-date` > `.petit` `.jour` `.annee` (`--taille`, `--annee`, `--sur-annee`) |
 | P12 | Lignes d'informations | Pile de lignes, chacune dans un style différent : pilule double, ligne surlignée, étiquette + texte, pilule contour | 02 | `.infos` > `.pilule-double`, `.info-ligne.surlignee`, `.info-ligne` |
 | P13 | Panneau accroché | Panneau de couleur collé sous une carte, comme s'il en descendait | 09 | `.panneau.plein.colle-haut` |
 | P14 | Barre de réassurance | Barre en verre clair qui aligne deux ou trois pilules à icône (« Plateforme sécurisée », « Livraison instantanée ») | 17 | `.panneau.verre.clair.reassurance` + `.pilule.avec-ic` |

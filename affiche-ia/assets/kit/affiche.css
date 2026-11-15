@@ -256,7 +256,7 @@ html,body{margin:0;padding:0;background:#17171b}
 .bloc-date{display:inline-flex;flex-direction:column;align-items:flex-start;position:relative}
 .bloc-date .jour{background:var(--clair);color:var(--encre);font-family:var(--f-titre);font-weight:900;line-height:1;padding:.14em .28em .1em;font-size:var(--taille,120px);letter-spacing:-.03em}
 .bloc-date .petit{background:color-mix(in srgb,var(--accent) 90%,#fff);color:var(--encre);font-weight:700;font-size:28px;padding:4px 22px;margin-bottom:-2px;margin-left:16px;position:relative;z-index:1}
-.bloc-date .annee{background:var(--accent2);color:#fff;font-weight:800;font-style:italic;font-size:44px;padding:2px 22px;transform:rotate(-4deg) translate(40%,-35%);align-self:flex-end;margin-bottom:-30px}
+.bloc-date .annee{background:var(--annee,var(--accent2));color:var(--sur-annee,#fff);font-weight:800;font-style:italic;font-size:44px;padding:2px 22px;transform:rotate(-4deg) translate(40%,-35%);align-self:flex-end;margin-bottom:-30px}
 /* P12 lignes d'informations empilées, chacune dans un style différent */
 .infos{display:flex;flex-direction:column;gap:var(--gap,18px)}
 .info-ligne{display:flex;align-items:center;gap:18px}
@@ -405,7 +405,7 @@ html,body{margin:0;padding:0;background:#17171b}
 .prix-pilule.nouveau{background:var(--accent);color:var(--encre)}
 /* X04 grande carte de prix */
 .carte-prix{display:flex;flex-direction:column;gap:6px;padding:30px 38px;border-radius:var(--rayon);color:#fff;
-  background:linear-gradient(160deg,color-mix(in srgb,var(--primaire) 80%,#fff 20%),var(--primaire) 45%,color-mix(in srgb,var(--primaire) 60%,#000));
+  background:linear-gradient(160deg,color-mix(in srgb,var(--primaire) 92%,#fff 8%),var(--primaire) 45%,color-mix(in srgb,var(--primaire) 60%,#000));
   box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 22px 40px -18px color-mix(in srgb,var(--primaire) 70%,#000)}
 .carte-prix .ligne{display:flex;align-items:center;gap:14px;font-size:24px;font-weight:600}
 .carte-prix .ligne::after{content:"";flex:1;height:1.5px;background:currentColor;opacity:.6}
@@ -435,7 +435,7 @@ html,body{margin:0;padding:0;background:#17171b}
 .prix-geant .devise{font-weight:500;font-size:.62em}
 
 /* =====================================================================
-   C — APPELS À L'ACTION
+   N — APPELS À L'ACTION
    ===================================================================== */
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:16px;padding:.62em 1.5em;border-radius:999px;font-weight:700;font-size:30px;line-height:1.1;white-space:nowrap;
   background:var(--accent);color:var(--encre);box-shadow:0 16px 30px -14px rgba(0,0,0,.6)}
@@ -447,19 +447,19 @@ html,body{margin:0;padding:0;background:#17171b}
 .cta.degrade{background:linear-gradient(160deg,var(--g1,color-mix(in srgb,var(--primaire) 80%,#fff)),var(--g2,color-mix(in srgb,var(--primaire) 65%,#000)));color:#fff}
 .cta .point{width:.56em;height:.56em;border-radius:50%;background:var(--accent)}
 .cta.blanc .point{background:var(--accent)}
-/* C01 languette suspendue en haut du socle */
+/* N01 languette suspendue en haut du socle */
 .languette{border-radius:0 0 34px 34px;box-shadow:0 18px 30px -16px rgba(0,0,0,.35)}
-/* C04 adresse du site façon barre de recherche */
+/* N04 adresse du site façon barre de recherche */
 .url{display:inline-flex;align-items:center;gap:18px;padding:8px 10px 8px 10px;border-radius:999px;background:var(--accent);color:var(--encre);font-weight:600;font-size:28px;white-space:nowrap}
 .url .ic-rond{--d:48px;--ic-fond:var(--encre);--ic-couleur:var(--accent)}
 .url span{padding:0 22px 0 6px}
-/* C05 ovale tracé à la main autour d'un texte : <span class="ovale-main"> */
+/* N05 ovale tracé à la main autour d'un texte : <span class="ovale-main"> */
 .ovale-main{position:relative;display:inline-grid;place-items:center;text-align:center;padding:26px 62px;font-weight:700;line-height:1.1}
 .ovale-main>.forme{position:absolute;inset:-6%;width:112%;height:112%;color:var(--couleur,currentColor);pointer-events:none}
-/* C06 phrase d'appel en capitales fines + flèche */
+/* N06 phrase d'appel en capitales fines + flèche */
 .appel{display:inline-flex;align-items:center;gap:18px;font-weight:300;letter-spacing:.06em;text-transform:uppercase}
 .triangle-bas{width:0;height:0;border-left:.36em solid transparent;border-right:.36em solid transparent;border-top:.5em solid var(--couleur,var(--accent2));display:inline-block}
-/* C04 curseur de souris posé sur un bouton */
+/* N04 curseur de souris posé sur un bouton */
 .curseur{position:absolute;width:var(--d,54px);height:var(--d,54px);filter:drop-shadow(0 6px 6px rgba(0,0,0,.45))}
 
 /* =====================================================================

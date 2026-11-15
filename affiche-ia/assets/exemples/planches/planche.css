@@ -1,5 +1,5 @@
 /* mise en page commune des planches de démonstration (pas utilisée par les affiches) */
 .affiche.planche{height:auto;min-height:0;--fond:#0d1020;display:grid;gap:14px;padding:14px;align-items:stretch}
-.planche .t{position:relative;overflow:hidden;border-radius:14px;isolation:isolate;padding:44px 36px 76px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:18px;min-height:300px}
+.planche .t{position:relative;overflow:hidden;border-radius:14px;isolation:isolate;padding:56px 48px 96px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:18px;min-height:420px}
 .planche .t.c{align-items:center}
-.planche .t>em{position:absolute;left:12px;right:12px;bottom:10px;z-index:9;background:rgba(0,0,0,.74);color:#fff;font-size:17px;line-height:1.25;padding:5px 12px;border-radius:8px;font-weight:600;font-style:normal;font-family:Poppins;text-transform:none;letter-spacing:0;text-align:left}
+.planche .t>em{position:absolute;left:12px;right:12px;bottom:10px;z-index:9;background:rgba(0,0,0,.74);color:#fff;font-size:24px;line-height:1.25;padding:7px 16px;border-radius:8px;font-weight:600;font-style:normal;font-family:Poppins;text-transform:none;letter-spacing:0;text-align:left}
