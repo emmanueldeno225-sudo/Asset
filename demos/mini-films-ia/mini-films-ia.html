@@ -1,0 +1,69 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Mini-Films IA — Deno Digital</title>
+<link rel="stylesheet" href="{{KIT}}/kit/affiche.css">
+<style>
+/* Idée : une affiche de cinéma. Pellicule en vedette, clap, billet d'entrée pour le prix.
+   Couleurs de Deno : bleu #1E6BFF, violet #8A5CFF, or pour l'argent et l'action. */
+.affiche{--fond:#081240;--fond2:#02040F;--primaire:#1E6BFF;--accent:#FFC23D;--accent2:#8A5CFF;--clair:#FFF6DC;--encre:#0B1220;
+  --f-titre:'Archivo';--f-texte:'Poppins';--rayon:34px}
+</style></head><body>
+<div class="affiche f45">
+  <!-- 1. fond -->
+  <div class="fond fond-radial" style="--px:74%;--py:30%;--taille:64%;--lueur:#1E6BFF"></div>
+  <div class="faisceau" style="--force:.85;--forme:polygon(88% 14%,90% 20%,0 80%,0 34%)"><i></i></div>
+  <div class="lueur" style="--couleur:#8A5CFF;--d:560px;left:-260px;top:700px;--force:.42;--flou:70px"></div>
+  <div class="grain" style="--force:.18"></div>
+  <div class="vignette" style="--force:.5"></div>
+
+  <!-- en-tête -->
+  <div class="logo-texte" style="left:64px;top:56px;font-size:30px;font-family:'Poppins'"><span class="ic-carre" data-ic="film-reel" style="--d:54px;--ic-fond:#1E6BFF;--ic-couleur:#fff"></span><span>Deno Digital<small>Créateur de contenu IA</small></span></div>
+  <span class="pilule noir abs" style="right:64px;top:60px;font-size:23px;font-weight:600;border:1.5px solid rgba(255,255,255,.3)"><i class="ic" data-ic="m:tiktok"></i>@motion.ia5</span>
+
+  <!-- 2. titre -->
+  <div class="abs z4" style="left:64px;top:168px;width:900px">
+    <span class="pilule degrade carre maj" style="font-size:21px;letter-spacing:.16em;--g1:#FFE9A8;--g2:#FFC23D;color:#3a2600;padding:.5em 1em;font-weight:800">Formation complète</span>
+    <div class="titre maj large w9 texte-3d" style="font-size:104px;margin-top:22px;letter-spacing:-.02em;--t1:#E3EAFF;--t2:#93A9FF;--t3:#2444C4">Mini-Films</div>
+    <div class="rang g24" style="margin-top:2px">
+      <div class="titre maj large w9 texte-3d" style="font-size:150px;line-height:.9;--t1:#FFEEC2;--t2:#FFB52E;--t3:#A85F00;--halo:rgba(255,180,60,.5)">IA</div>
+      <div class="barre-v w5" style="font-size:28px;line-height:1.24;color:#D6E0FF;width:440px;--couleur:#FFC23D">Apprends à créer tes propres vidéos d'histoires avec l'intelligence artificielle.</div>
+    </div>
+  </div>
+
+  <!-- 3. la pellicule -->
+  <div class="pellicule z2" data-bord data-libre style="left:-150px;top:560px;--rot:-5deg">
+    <div class="vue" style="background:linear-gradient(160deg,#7B2FF7,#F107A3)"><img class="objet" src="{{KIT}}/3d/couronne.png"></div>
+    <div class="vue" style="background:linear-gradient(160deg,#00C6FB,#005BEA)"><img class="objet" src="{{KIT}}/3d/fusee.png"></div>
+    <div class="vue" style="background:linear-gradient(160deg,#141E5A,#6A3DF0)"><img class="objet" src="{{KIT}}/3d/robot.png"></div>
+    <div class="vue" style="background:linear-gradient(160deg,#FF9A44,#FC6076)"><img class="objet" src="{{KIT}}/3d/boule-cristal.png"></div>
+    <div class="vue" style="background:linear-gradient(160deg,#0BA360,#3CBA92)"><img class="objet" src="{{KIT}}/3d/coeur-etincelant.png"></div>
+    <div class="vue" style="background:linear-gradient(160deg,#F7971E,#FFD200)"><img class="objet" src="{{KIT}}/3d/etoile-brillante.png"></div>
+  </div>
+  <img class="deco3d z5" src="{{KIT}}/3d/clap.png" style="--d:240px;left:806px;top:404px;--rot:10deg">
+  <img class="deco3d z3" src="{{KIT}}/3d/camera-cinema.png" style="--d:170px;left:872px;top:128px;--rot:-18deg">
+  <span class="etincelle z5" style="left:690px;top:186px;--d:44px;--couleur:#FFE08A"></span>
+  <span class="etincelle z5" style="left:760px;top:330px;--d:28px"></span>
+
+  <!-- 4. le billet : prix -->
+  <div class="billet abs z6" style="left:150px;top:900px;--l:780px;--h:226px;--talon:200px;--rot:-2.5deg;--couleur:#FFC23D;--sur:#201400">
+    <div class="corps">
+      <span class="w8 maj" style="font-size:22px;letter-spacing:.2em">Tarif de lancement</span>
+      <span class="prix-geant large" style="--taille:98px;margin-top:4px">3&nbsp;500<span class="devise" style="font-size:.36em;font-weight:900">&nbsp;FCFA</span></span>
+      <span class="w6" style="font-size:28px;margin-top:6px">au lieu de <span class="barre rouge w7" style="--ep-trait:2.5px">15&nbsp;000&nbsp;FCFA</span></span>
+    </div>
+    <div class="talon">
+      <span class="titre large w9" style="font-size:54px;letter-spacing:-.03em;line-height:1">-77&nbsp;%</span>
+      <span class="w8 maj" style="font-size:20px;letter-spacing:.14em;margin-top:8px">Réduction</span>
+    </div>
+  </div>
+  <div class="badge-rond abs z7" style="--d:168px;--couleur:#7645EE;left:36px;top:778px;--rot:-10deg;font-size:22px;font-weight:700"><span><b style="font-size:33px;display:block;line-height:1.05">3 bonus</b>exclusifs</span></div>
+
+  <!-- 5. action -->
+  <div class="rang abs z6" style="left:64px;right:64px;bottom:58px;justify-content:space-between;align-items:center">
+    <span class="rang g16 w6" style="font-size:23px;line-height:1.15"><span class="ic-rond relief" data-ic="lock-key" style="--d:60px;--ic-fond:#1E6BFF;--ic-couleur:#fff"></span><span>Plateforme<br>sécurisée</span></span>
+    <span class="pile centre g12">
+      <span class="cta" style="font-size:31px;background:linear-gradient(180deg,#4C8DFF,#1E5BFF);color:#fff;padding:.55em 1.3em .55em .55em;box-shadow:0 0 0 2px rgba(255,255,255,.22),0 18px 40px -10px rgba(30,107,255,.9)"><span class="ic-rond" data-ic="arrow-right:bold" style="--d:54px;--ic-fond:#FFC23D;--ic-couleur:#201400"></span>Profiter de l'offre</span>
+      <span class="w5" style="font-size:23px;color:#C9D6FF"><i class="ic" data-ic="globe:bold" style="margin-right:8px"></i>denoservice.mychariow.shop</span>
+    </span>
+    <span class="rang g16 w6" style="font-size:23px;line-height:1.15;text-align:right"><span>Accès<br>instantané</span><span class="ic-rond relief" data-ic="lightning" style="--d:60px;--ic-fond:#FFC23D;--ic-couleur:#201400"></span></span>
+  </div>
+</div>
+<script src="{{KIT}}/kit/kit.js"></script></body></html>

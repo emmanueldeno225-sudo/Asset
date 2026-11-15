@@ -136,6 +136,7 @@ Un fond se construit en couches : couleur ou dégradé, motif discret, lueurs, g
 | F13 | Grandes formes douces | Disques ou barres ton sur ton, très grands, coupés par le bord | 03, 17 | `.forme-douce` |
 | F14 | Grille fine | Quadrillage discret qui s'efface sur les bords (tech, IA, crypto) | — (ajout) | `.motif-grille` |
 | F15 | Grain et vignette | Grain de pellicule à 10–15 %, coins assombris | — (ajout) | `.grain`, `.vignette` |
+| F16 | Faisceau de projecteur | Cône de lumière qui part d'un coin et traverse le fond (cinéma, spectacle, lancement) | — (ajout) | `<div class="faisceau"><i></i></div>` (`--forme` `--angle` `--couleur` `--force`) |
 
 Règles relevées : le fond ne compte jamais plus de deux teintes ; le motif reste sous 15 % d'opacité ; la zone
 la plus claire du fond est derrière le héros, pas derrière le texte.
@@ -246,6 +247,7 @@ Un panneau contient une seule idée : la liste, ou le prix, ou les informations 
 | E15 | Note et avis | Smiley ou étoiles + « 4,9 avis positifs » | 17, 18 | `.note` + `.etoiles` (`data-note`) |
 | E16 | Pastille à légende | Icône dans un rond, deux mots dessous | 01 | `.pastille` > `.ic-rond` + légende |
 | E17 | Badges de boutiques | App Store et Google Play | 08 | `.store`, `.store.noir` |
+| E18 | Billet d'entrée à talon | Billet de cinéma ou de concert : corps avec le prix, talon séparé par des pointillés et deux encoches, légèrement penché | — (ajout) | `.billet` > `.corps` + `.talon` (`--couleur` `--sur` `--l` `--talon` `--rot`) |
 
 ---
 
@@ -286,7 +288,7 @@ Relevé : 3 à 6 lignes, 5 à 8 mots par ligne, texte 24–30 px, écart entre l
 | X08 | Mention de paiement | « Payable en 2 fois », coordonnées de paiement, en petit espacé | 01, 06 | `.mention` |
 | X09 | Badge de réduction | Voir E06 et E07 : « -60 % » | 19 | `.badge-rond`, `.badge-eclat` |
 
-Le trait qui barre : `.barre` (horizontal), `.barre.diag` (penché), `.barre.rouge`.
+Le trait qui barre : `.barre` (horizontal), `.barre.diag` (penché), `.barre.rouge` ; `--ep-trait` règle son épaisseur.
 Le nouveau prix est toujours plus gros et plus coloré que l'ancien. La devise est 2 à 3 fois plus petite que le montant.
 
 ---
@@ -361,6 +363,7 @@ même support.
 | D13 | Crédit vertical | Signature du graphiste, minuscule, tournée, sur un bord | 10, 18 | `.credit-v` |
 | D14 | Reflet sur les cartes | Trait de lumière sur l'arête haute ou basse d'une carte | 10, 15 | `.reflet` |
 | D15 | Demi-cercle | Demi-disque d'accent coupé par le bord | 01 | `.demi-cercle` |
+| D16 | Pellicule | Bande de film à perforations, penchée, qui traverse l'affiche ; chaque vue reçoit une capture ou un objet | — (ajout) | `.pellicule` > `.vue` > `<img>` ou `<img class="objet">` (`--rot` `--lv` `--hv`) + `data-bord` |
 
 Les 202 objets 3D disponibles sont listés dans `assets/3d/catalogue.json` (chercher : `node scripts/icones.js argent`).
 Dosage relevé : 3 à 6 décorations, toutes de la même famille, placées dans les coins et autour du héros,
@@ -455,4 +458,6 @@ Ce sont les combinaisons vues sur les meilleures références. En choisir deux o
 7. **Lueur derrière la tête** : D10 dans la teinte claire du fond. Le héros se détache sans contour.
 8. **Écriture en travers** : T05, un seul mot, penché, en accent. Donne de la vie à un titre très géométrique.
 9. **Réassurance** : P14 ou E16 près du prix (« Paiement sécurisé », « Accès immédiat »). Lève le doute au moment d'acheter.
-10. **Le vide** : garder un tiers de l'affiche sans texte. Une affiche pleine se lit moins qu'une affiche aérée.
+10. **Un thème tenu jusqu'au bout** : quand le nom de l'offre évoque un univers (cinéma, voyage, cuisine), deux ou
+    trois éléments le déclinent : pellicule D16, billet E18 et faisceau F16 pour le cinéma. Pas plus de trois.
+11. **Le vide** : garder un tiers de l'affiche sans texte. Une affiche pleine se lit moins qu'une affiche aérée.

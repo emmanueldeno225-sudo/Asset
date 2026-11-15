@@ -312,6 +312,19 @@ html,body{margin:0;padding:0;background:#17171b}
   mask:radial-gradient(circle var(--c) at 0 50%,transparent 97%,#000) left/51% calc(var(--c)*2.6) repeat-y,radial-gradient(circle var(--c) at 100% 50%,transparent 97%,#000) right/51% calc(var(--c)*2.6) repeat-y}
 .ticket .petit{font-size:.36em;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
 .epingle{position:absolute;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--couleur,#2fd05a) 45%,color-mix(in srgb,var(--couleur,#2fd05a) 60%,#000));box-shadow:0 4px 6px rgba(0,0,0,.4)}
+/* E18 billet d'entrée à talon : <div class="billet"><div class="corps">…</div><div class="talon">…</div></div>
+   --couleur fond du billet, --sur couleur du texte, --l largeur, --talon largeur du talon, --rot inclinaison */
+.billet{position:relative;display:flex;width:var(--l,720px);min-height:var(--h,220px);color:var(--sur,var(--encre));transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 28px 34px rgba(0,0,0,.5));--c:16px}
+.billet .corps,.billet .talon{display:flex;flex-direction:column;justify-content:center;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--couleur,var(--accent)) 50%,#fff),var(--couleur,var(--accent)))}
+.billet .corps{flex:1;padding:22px 34px;border-radius:var(--rb,26px) 0 0 var(--rb,26px);
+  -webkit-mask:radial-gradient(circle var(--c) at 100% 0,transparent 97%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--c) at 100% 100%,transparent 97%,#000) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle var(--c) at 100% 0,transparent 97%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--c) at 100% 100%,transparent 97%,#000) bottom/100% 51% no-repeat}
+.billet .talon{flex:none;width:var(--talon,190px);align-items:center;text-align:center;padding:16px 14px;border-radius:0 var(--rb,26px) var(--rb,26px) 0;
+  border-left:3px dashed color-mix(in srgb,var(--sur,var(--encre)) 45%,transparent);
+  -webkit-mask:radial-gradient(circle var(--c) at 0 0,transparent 97%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--c) at 0 100%,transparent 97%,#000) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle var(--c) at 0 0,transparent 97%,#000) top/100% 51% no-repeat,radial-gradient(circle var(--c) at 0 100%,transparent 97%,#000) bottom/100% 51% no-repeat}
 /* E14 petite puce rectangulaire (drapeau + sigle, certification) */
 .chip{display:inline-flex;align-items:center;gap:10px;background:var(--clair);color:var(--encre);font-weight:800;font-size:22px;padding:7px 14px;border-radius:8px;line-height:1;white-space:nowrap}
 /* E03 petites pastilles de caractéristiques, contour fin */
@@ -393,7 +406,7 @@ html,body{margin:0;padding:0;background:#17171b}
 .pave.gris{background:#E6E6E6;color:#3b3b3b}
 /* prix barré : trait horizontal, ou en diagonale avec .diag */
 .barre{position:relative;display:inline-block}
-.barre::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:max(3px,.07em);background:var(--trait,currentColor);border-radius:2px}
+.barre::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:var(--ep-trait,max(3px,.07em));background:var(--trait,currentColor);border-radius:2px}
 .barre.diag::after{transform:rotate(-9deg)}
 .barre.rouge{--trait:#E0202A}
 .devise{font-size:.5em;font-weight:700;letter-spacing:.02em}
@@ -495,6 +508,19 @@ html,body{margin:0;padding:0;background:#17171b}
 /* D04 coups de pinceau : <div class="pinceau" data-forme="1"> (tracé par kit.js) */
 .pinceau{position:absolute;width:var(--l,520px);height:var(--h,520px);color:var(--couleur,#fff);transform:rotate(var(--rot,0deg));pointer-events:none}
 .pinceau svg{width:100%;height:100%;display:block;overflow:visible}
+/* D16 pellicule : bande de film à perforations. <div class="pellicule"><div class="vue"><img src="capture.jpg"></div>…</div>
+   --rot inclinaison, --lv / --hv taille d'une vue, --couleur de la bande, --trou couleur des perforations */
+.pellicule{position:absolute;display:flex;gap:var(--gap,16px);padding:46px 30px;transform:rotate(var(--rot,-5deg));box-shadow:0 34px 60px -22px rgba(0,0,0,.75);
+  background-color:var(--couleur,#0A0D1C);
+  background-image:repeating-linear-gradient(90deg,var(--trou,rgba(255,255,255,.82)) 0 22px,transparent 22px 48px),repeating-linear-gradient(90deg,var(--trou,rgba(255,255,255,.82)) 0 22px,transparent 22px 48px);
+  background-size:100% 14px,100% 14px;background-position:8px 16px,8px calc(100% - 16px);background-repeat:no-repeat}
+.pellicule .vue{flex:none;position:relative;width:var(--lv,236px);height:var(--hv,250px);border-radius:10px;overflow:hidden;display:grid;place-items:center;background:#1b2036;box-shadow:inset 0 0 0 2px rgba(255,255,255,.14)}
+.pellicule .vue>img{width:100%;height:100%;object-fit:cover}
+.pellicule .vue>img.objet{width:62%;height:auto;object-fit:contain;filter:drop-shadow(0 14px 14px rgba(0,0,0,.35))}
+/* faisceau de projecteur : cône de lumière qui part d'un coin. <div class="faisceau"><i></i></div> */
+.faisceau{position:absolute;inset:0;filter:blur(var(--flou,10px));opacity:var(--force,.9);pointer-events:none}
+.faisceau>i{position:absolute;inset:0;background:linear-gradient(var(--angle,250deg),var(--couleur,rgba(150,195,255,.42)),transparent 72%);
+  clip-path:var(--forme,polygon(100% 0,100% 5%,0 72%,0 30%))}
 /* D06 flèche en pointillés qui boucle */
 .fleche-main{position:absolute;width:var(--l,300px);height:var(--h,160px);color:var(--couleur,currentColor);transform:rotate(var(--rot,0deg));pointer-events:none}
 .fleche-main svg{width:100%;height:100%;display:block;overflow:visible}
