@@ -136,6 +136,8 @@ fichier HTML : une correction se fait en une minute. Si la session est temporair
   dans `references/prompt-image.md` ; une composition sans photo (C4).
 - **Plusieurs formats** : refais la mise en page pour chaque format, ne déforme pas l'image.
 - **La personne veut un prompt pour ChatGPT ou un autre générateur d'images** : `references/prompt-image.md`.
+- **Canva est connecté et la personne veut un design dans son compte Canva** (pour le retoucher elle-même, ou pour
+  que Canva génère l'affiche) : `references/canva.md`. Les deux routes y sont décrites avec leurs limites réelles.
 - **Impossible d'exécuter les scripts ici** : dis-le, et livre à la place le prompt d'image complet.
 - **Ajouter une affiche au catalogue** : mesure-la avec `palette.py`, écris sa fiche à la suite dans
   `references/analyses.md` (même gabarit), ajoute au catalogue les éléments nouveaux avec l'identifiant suivant de
@@ -151,6 +153,7 @@ fichier HTML : une correction se fait en une minute. Si la session est temporair
 | `references/direction-artistique.md` | Passer de la référence à une affiche originale ; écrire les textes ; grille de relecture | Étapes 3 et 5 |
 | `references/moteur.md` | Écrire la maquette avec le kit ; héros ; polices ; messages des contrôles ; pièges | Étape 4 |
 | `references/prompt-image.md` | Textes pour générer un héros, ou l'affiche entière, avec un générateur d'images | Pas de photo ; demande de prompt |
+| `references/canva.md` | Faire générer l'affiche par Canva, ou rendre modifiable dans Canva une affiche du kit | Canva connecté et demandé |
 | `references/planches/*.jpg` | Rendu réel de chaque composant du kit | Pour voir un composant avant de l'utiliser |
 | `references/exemples/*.jpg` | Aperçu des 8 affiches modèles | Choisir le point de départ |
 | `assets/exemples/*.html` | Les 8 affiches modèles ; `planches/` : le code de chaque composant | Étape 4 |
