@@ -1,0 +1,76 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Planche 4 — Prix, appels à l'action, pieds de page</title>
+<link rel="stylesheet" href="{{KIT}}/kit/affiche.css"><link rel="stylesheet" href="planche.css">
+<style>.affiche{width:1620px;grid-template-columns:repeat(3,1fr);font-size:24px}</style></head><body>
+<div class="affiche planche" data-libre>
+
+ <div class="t c" style="background:linear-gradient(120deg,#1c1c1c,#3a3a3a 50%,#151515);--accent:#FFD21F;--accent2:#E8181C;--encre:#141414">
+  <span class="appel" style="font-size:26px">Rejoins-nous maintenant <i class="triangle-bas"></i></span>
+  <div class="prix-duo"><div class="prix-case"><span class="libelle">Prix officiel</span><span class="pave ancien" style="--taille:52px"><span class="barre">98 000 F</span></span></div>
+  <div class="prix-case"><span class="libelle">Prix promo</span><span class="pave nouveau" style="--taille:52px">65 000 F</span></div></div>
+  <span class="mention">* Payable en 2X</span>
+  <em>X01 prix-duo (prix-case : libelle + pave ancien/nouveau, .barre) · X08 mention · C06 appel + triangle-bas</em></div>
+
+ <div class="t c" style="background:#121212;--accent:#E0B93B;--encre:#1a1405;--f-titre:'Plus Jakarta Sans'">
+  <div class="rang g20"><span class="prix-pilule ancien"><small>Regular Price</small><b class="barre rouge">50,000 XFA</b></span><span class="prix-pilule nouveau"><small>New Price</small><b>15,000 XFA</b></span></div>
+  <em>X02 prix-pilule ancien / nouveau (.barre.rouge)</em></div>
+
+ <div class="t" style="background:linear-gradient(160deg,#2B61A0,#0B1B3E);--primaire:#1F5FD0;--accent:#3DF0A8;--f-titre:'Poppins'">
+  <div class="pile g12" style="width:76%;align-self:center"><div class="prix-carte ancien"><small>Old Price</small><b class="barre">30k</b></div><div class="prix-carte nouveau"><small><i class="ic" data-ic="caret-right" style="margin-right:6px"></i>New Price</small><b>15k</b></div></div>
+  <em>X03 prix-carte ancien / nouveau, empilées</em></div>
+
+ <div class="t c" style="background:#F4F7FF;--primaire:#1B49D8;--f-titre:'Sora';color:#111">
+  <div class="carte-prix" style="width:78%;--taille:78px"><span class="ligne">Early Bird Price:</span><span class="montant">₦10 000</span><span class="ligne fin">(limited seats)</span></div>
+  <em>X04 carte-prix (ligne + montant + ligne fin)</em></div>
+
+ <div class="t c" style="background:#0B5D3B;--clair:#fff;--encre:#0B3B26;--f-titre:'Archivo'">
+  <div class="panneau carte c pile" style="--rayon:46px;--pad:34px 44px;align-items:center;display:flex;flex-direction:column"><span class="titre maj large w9" style="font-size:38px">Modules</span><span class="prix-geant large" style="--taille:118px">50<span class="devise">$</span></span></div>
+  <em>X05 prix-geant dans une carte claire</em></div>
+
+ <div class="t c" style="background:#090C30;--accent:#F5F01F;--f-titre:'Oswald'">
+  <span class="prix-ligne" style="--taille:92px;--petit:42px"><span class="ancien"><span class="barre">10.000</span> <span class="devise">FCFA</span></span><i class="ic fleche" data-ic="arrow-right:regular"></i><span class="nouveau">4.000<span class="devise">FCFA</span></span></span>
+  <em>X07 prix-ligne : ancien barré → nouveau en très gros (Oswald)</em></div>
+
+ <div class="t c" style="background:linear-gradient(180deg,#111 0 46%,#FDFDF5 46%);--accent:#F2D300;--encre:#151515;--clair:#fff;justify-content:flex-end;gap:26px">
+  <span class="cta blanc languette" style="font-size:22px;position:absolute;top:46%"><i class="point"></i>Enroll now and start earning with your words</span>
+  <div class="barre-contact noir biseau" style="width:100%;font-size:22px"><span class="contact"><span class="ic-rond blanc" data-ic="m:whatsapp" style="--d:44px"></span>+234 804 028 0881</span><span class="tiret"></span><span class="contact"><span class="ic-rond blanc" data-ic="envelope-simple" style="--d:44px"></span>anita11@gmail.com</span></div>
+  <em>C01 cta blanc languette + point · J01 barre-contact noir biseau (contact + ic-rond blanc + tiret)</em></div>
+
+ <div class="t c" style="background:#0E051D;--primaire:#4B2A9A;--accent:#FF9D47;gap:22px">
+  <div class="rang g20"><span class="cta degrade carre" style="font-size:24px;--g1:#3b1f7a;--g2:#7d57d6">Join Us Today!</span><span class="cta degrade carre" style="font-size:24px;--g1:#3b1f7a;--g2:#7d57d6"><span class="reseaux" style="gap:6px"><span class="ic-rond" data-ic="m:facebook" style="--d:30px"></span><span class="ic-rond" data-ic="m:instagram" style="--d:30px"></span><span class="ic-rond" data-ic="m:x" style="--d:30px"></span></span>@zynexhub</span></div>
+  <div class="rang g20"><span class="cta" style="font-size:24px"><i class="ic" data-ic="download-simple:bold"></i>Accès sur Téléphone</span><span class="cta contour carre" style="font-size:22px">Demandez votre démo</span></div>
+  <em>C02 cta degrade carre · C03 cta avec icône · C07 cta contour carre · reseaux dans un bouton</em></div>
+
+ <div class="t c" style="background:#1E604A;--accent:#F2C230;--encre:#132a20;gap:26px">
+  <div style="position:relative"><span class="url" style="font-size:24px"><span class="ic-rond" data-ic="globe:bold"></span><span>www.vendorsan.com</span><span class="ic-rond" data-ic="magnifying-glass:bold"></span></span><span class="curseur" style="right:60px;top:38px;--d:46px"></span></div>
+  <span class="ovale-main" style="font-size:24px">Practical Training<br>RSVP</span>
+  <em>C04 url (ic-rond + texte + ic-rond) + curseur · C05 ovale-main</em></div>
+
+ <div class="t c" style="background:#0B5D3B;--primaire:#3DB57E;--clair:#fff">
+  <div class="barre-contact" style="width:100%;font-size:19px;--rb:30px;padding:18px 26px"><span class="contact multi"><img src="{{KIT}}/3d/epingle-lieu.png" style="width:54px"><span>RDC SUD KIVU, Bukavu ville, av. Vamaro,<br>en face de la clinique Saint-Luc</span></span><span class="contact"><span class="ic-carre blanc" data-ic="phone-call" style="--d:46px;--ic-couleur:#1877F2"></span>+243 997 508 103</span></div>
+  <em>J02 barre-contact couleur de marque (adresse sur 2 lignes + téléphone)</em></div>
+
+ <div class="t c" style="background:#040594;--clair:#fff;--encre:#111;padding-left:0;padding-right:0">
+  <div class="bande-pied" style="position:relative;width:100%;--h:110px;font-size:19px;padding:0 30px"><span class="contact multi"><i class="ic" data-ic="map-pin" style="font-size:40px"></i><span>Av. de la Paix n° 12,<br>Abidjan Cocody</span></span><span class="contact multi"><i class="ic" data-ic="phone" style="font-size:38px"></i><span>07 00 00 00 01<br>05 00 00 00 02</span></span><span class="logo-texte" style="position:static;font-size:24px;color:#040594">THE SCREENS</span></div>
+  <em>J03 bande-pied blanche pleine largeur (adresse, téléphones, logo)</em></div>
+
+ <div class="t" style="background:#5A0508;gap:22px">
+  <span class="reseaux" style="font-size:24px"><span class="ic-rond blanc" data-ic="m:instagram"></span><span class="ic-rond blanc" data-ic="m:facebook"></span><span class="ic-rond blanc" data-ic="m:tiktok"></span><span class="ic-rond blanc" data-ic="m:youtube"></span></span>
+  <span class="w5" style="font-size:24px;margin-top:-10px">Maison de Lumière</span>
+  <span class="contact w8" style="font-size:38px;font-family:'Plus Jakarta Sans'"><i class="ic" data-ic="phone-call" style="color:#E0B93B"></i>+237 679 903 819</span>
+  <em>J04 reseaux (ic-rond blanc + marques) · J09 gros numéro avec icône</em></div>
+
+ <div class="t c" style="background:#020a2e;--primaire:#1230e0">
+  <div class="rang g20" style="width:100%"><span class="infoline" style="font-size:24px"><span class="micro">Infoline</span>+243 <b>973 800 322</b></span><span class="filet" style="flex:1;--force:.35"></span><span class="reseaux" style="font-size:18px;gap:8px"><i class="ic" data-ic="m:facebook"></i><i class="ic" data-ic="m:tiktok"></i><i class="ic" data-ic="m:instagram"></i><span class="w4">MC <b>Alexandre Noé</b></span></span></div>
+  <em>J06 infoline + micro · filet · reseaux en icônes nues</em></div>
+
+ <div class="t c" style="background:#0E3930;--clair:#fff;--encre:#12261f;--accent:#F5AD31;padding-bottom:96px">
+  <div style="position:relative;width:100%"><div class="barre-contact blanc" style="font-size:17px;--rb:14px;padding:14px 120px 26px 22px;justify-content:flex-start;gap:20px"><span class="pile" style="gap:2px"><span class="contact" style="gap:8px"><i class="ic" data-ic="m:facebook"></i><i class="ic" data-ic="m:instagram"></i><i class="ic" data-ic="m:tiktok"></i>cliraptogo</span><span class="contact w8" style="gap:8px"><i class="ic" data-ic="m:whatsapp"></i>+228 92 56 12 81</span></span><span class="filet v pointille" style="--h:54px"></span><span class="w7" style="opacity:.7">Partenaire 1</span><span class="w7" style="opacity:.7">Partenaire 2</span></div>
+  <span class="pilule accent carre maj aere" style="position:absolute;left:30%;right:130px;bottom:-12px;font-size:11px;padding:5px 10px;border-radius:8px 8px 0 0">Clirap, join us, go far…</span>
+  <div class="logo-rond" style="--d:110px;right:6px;top:-22px;--anneau:#fff;font-weight:800;font-size:24px">Clir@p</div></div>
+  <em>J07 barre blanche partenaires + logo-rond qui dépasse + bandeau slogan</em></div>
+
+ <div class="t" style="background:#fff;color:#111;--accent2:#C1121F;--primaire:#8B0F1A;gap:14px">
+  <div class="rang g40" style="width:100%;justify-content:space-between;align-items:flex-end"><span class="pile g8"><span class="pilule carre" style="font-size:20px;align-self:flex-start">Session Starts:</span><span class="titre w8" style="font-size:38px">Sept 1st 2025</span></span><span class="pile" style="gap:4px;font-size:17px"><b>For More Enquiries:</b><span class="w8" style="color:#C1121F;font-size:19px">+234 815 577 1181 || +234 903 744 2698</span></span></div>
+  <em>J08 date de session (pilule + titre) et contacts en texte, sur socle blanc</em></div>
+</div>
+<script src="{{KIT}}/kit/kit.js"></script></body></html>

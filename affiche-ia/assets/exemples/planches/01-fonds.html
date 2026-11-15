@@ -1,0 +1,39 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Planche 1 — Fonds</title>
+<link rel="stylesheet" href="{{KIT}}/kit/affiche.css">
+<style>
+.affiche{width:1620px;height:1560px;background:#111;--fond:#111;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:14px;font-size:20px}
+.t{position:relative;overflow:hidden;border-radius:14px;isolation:isolate}
+.t{min-height:296px}.t>b{position:absolute;left:12px;bottom:10px;z-index:9;background:rgba(0,0,0,.72);color:#fff;font-size:17px;padding:3px 10px;border-radius:8px;font-weight:600}
+</style></head><body>
+<div class="affiche" data-libre>
+ <div class="t" style="--fond:#0B5D3B"><div class="fond fond-rideau"></div><b>F01 fond-rideau</b></div>
+ <div class="t" style="--fond:#101B5C;--fond2:#04071F;--lueur:#2F6BFF"><div class="fond fond-radial"></div><b>F02 fond-radial</b></div>
+ <div class="t" style="--fond:#3A0B5E;--fond2:#0C0220"><div class="fond fond-degrade"></div><b>F02 fond-degrade</b></div>
+ <div class="t" style="--fond:#F24A15;--fond2:#1F47E5"><div class="fond fond-split"></div><div class="fond" style="background:linear-gradient(180deg,transparent 45%,#090C30 78%)"></div><b>F08 fond-split + voile</b></div>
+ <div class="t" style="--fond:#F2C600;--fond2:#0B0904"><div class="fond fond-diagonale"></div><b>F09 fond-diagonale</b></div>
+
+ <div class="t" style="--fond:#3C3C3C;--fond2:#151515"><div class="fond fond-bandes"></div><div class="motif-trame" style="right:-120px;top:-120px"></div><b>F10 fond-bandes + F07 motif-trame</b></div>
+ <div class="t" style="--fond:#0F3FBD;--fond2:#0B2A7A"><div class="fond fond-degrade"></div><div class="motif-points"></div><div class="forme-douce" style="width:360px;height:360px;left:-120px;top:-100px"></div><b>F04 motif-points + F13 forme-douce</b></div>
+ <div class="t" style="--fond:#1E604A;--fond2:#17503D"><div class="fond fond-degrade"></div><div class="calque" data-motif="vagues" style="color:rgba(255,255,255,.06)"></div><b>F05 data-motif="vagues"</b></div>
+ <div class="t" style="--fond:#5A0508;--fond2:#2A0204"><div class="fond fond-degrade"></div><div class="motif-ondes"></div><b>F05 motif-ondes</b></div>
+ <div class="t" style="--fond:#1B4B86;--fond2:#0B1B3E"><div class="fond fond-degrade" style="--angle:200deg"></div><div class="motif-lignes"></div><b>F12 motif-lignes</b></div>
+
+ <div class="t" style="--fond:#020536;--fond2:#010516"><div class="fond fond-degrade"></div><div class="lueur" style="--couleur:#1230ff;--d:380px;left:-150px;top:-80px"></div><div class="lueur" style="--couleur:#2a4bff;--d:300px;right:-160px;top:160px"></div><div class="reflet" style="left:40px;top:150px;--l:220px"></div><b>F06 lueur + reflet</b></div>
+ <div class="t" style="--fond:#0E051D;--fond2:#05010d"><div class="fond fond-degrade"></div><div class="motif-grille"></div><div class="lueur" style="--couleur:#7b3df0;--d:340px;right:-90px;top:60px;--force:.7"></div><b>motif-grille + lueur</b></div>
+ <div class="t" style="--fond:#0A2A6B"><div class="fond" style="background:linear-gradient(135deg,#5a6b8a,#c0c6d2 40%,#59657d)"></div><div class="voile teinte"></div><div class="voile" style="--force:.35"></div><b>F03 photo floue + voile teinte</b></div>
+ <div class="t" style="--fond:#6B1408"><div class="fond" style="background:linear-gradient(160deg,#6c7a70,#2a2f2b 60%,#161616)"></div><div class="voile bas"></div><b>F11 photo + voile bas</b></div>
+ <div class="t" style="--fond:#0E3930;--fond2:#0A2A24"><div class="fond fond-degrade"></div><div class="grain" style="--force:.35"></div><div class="vignette"></div><b>grain + vignette</b></div>
+
+ <div class="t" style="--fond:#0B5D3B;--clair:#fff"><div class="fond fond-rideau"></div><div class="vague" data-vague="alpha" style="--h:210px"></div><b>B01 vague alpha</b></div>
+ <div class="t" style="--fond:#640712;--clair:#fff"><div class="fond"></div><div class="vague" data-vague="double" style="--h:200px;--couleur:#F61E30"></div><div class="vague" data-vague="douce" style="--h:130px"></div><b>B01 vague double + douce</b></div>
+ <div class="t" style="--fond:#0D1A49;--clair:#fff"><div class="fond"></div><div class="socle" style="--h:150px;--arrondi:60px"></div><b>B02 socle</b></div>
+ <div class="t" style="--fond:#261E07;--clair:#FDFDF5;--accent:#EACD04"><div class="fond"></div><div class="socle lisere arc" style="--h:140px;--courbe:60px;--retrait:20px"></div><b>B02 socle arc lisere</b></div>
+ <div class="t" style="--fond:#040594;--clair:#fff"><div class="fond"></div><div class="bande-pied" style="--h:80px;--bas:26px"></div><b>B03 bande-pied</b></div>
+
+ <div class="t" style="--fond:#101010"><div class="fond"></div><div class="vague" data-vague="colline" style="--h:200px;--couleur:#C4A139"></div><b>vague colline</b></div>
+ <div class="t" style="--fond:#101010"><div class="fond"></div><div class="vague" data-vague="montante" style="--h:200px;--couleur:#2F6BFF"></div><b>vague montante</b></div>
+ <div class="t" style="--fond:#101010"><div class="fond"></div><div class="vague" data-vague="creux" style="--h:200px;--couleur:#F96409"></div><b>vague creux</b></div>
+ <div class="t" style="--fond:#101010"><div class="fond"></div><div class="pinceau" data-forme="1" style="--l:300px;--h:300px;left:10px;top:-10px;--couleur:#EACD04"></div><b>D04 pinceau 1</b></div>
+ <div class="t" style="--fond:#0B2A8C"><div class="fond"></div><div class="pinceau" data-forme="3" style="--l:300px;--h:300px;left:10px;top:-10px"></div><b>D04 pinceau 3</b></div>
+</div>
+<script src="{{KIT}}/kit/kit.js"></script></body></html>

@@ -1,0 +1,587 @@
+/* =====================================================================
+   AFFICHE IA — kit de composants
+   Chaque bloc porte l'identifiant du catalogue (references/affiche-ia.md).
+   Tout se règle par variables CSS posées sur .affiche ou sur l'élément.
+   ===================================================================== */
+@import url("../fonts/fonts.css");
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#17171b}
+
+/* ---------- La toile ---------- */
+.affiche{
+  /* Jetons de couleur : à redéfinir pour chaque affiche */
+  --fond:#0B1B3E;            /* couleur de fond dominante */
+  --fond2:#050B1F;           /* seconde couleur de fond (dégradés, zones sombres) */
+  --primaire:#2F6BFF;        /* couleur de marque : panneaux pleins, pilules */
+  --accent:#FFD21F;          /* couleur qui attire l'œil : mot clé, prix, bouton */
+  --accent2:#FF3B30;         /* second accent, à doser (promo, urgence) */
+  --clair:#FFFFFF;           /* surfaces claires : cartes, socle, pied */
+  --encre:#0B1020;           /* texte posé sur une surface claire ou sur l'accent */
+  --texte:#FFFFFF;           /* texte posé sur le fond */
+  --doux:rgba(255,255,255,.74); /* texte secondaire sur le fond */
+  --rayon:32px;              /* arrondi des panneaux et cartes */
+  --marge:64px;              /* marge de sécurité autour de l'affiche */
+  --f-titre:'Poppins';
+  --f-texte:'Poppins';
+  --f-script:'Mrs Saint Delafield';
+  --ombre:rgba(0,0,0,.35);
+
+  position:relative; overflow:hidden; isolation:isolate;
+  width:1080px; height:1350px;
+  background:var(--fond); color:var(--texte);
+  font-family:var(--f-texte),system-ui,sans-serif; font-size:28px; line-height:1.3; font-weight:500;
+  -webkit-font-smoothing:antialiased; text-rendering:geometricPrecision;
+  font-kerning:normal; font-synthesis:none;
+}
+.affiche.f45 {width:1080px;height:1350px}   /* 4:5  fil Instagram / Facebook */
+.affiche.f11 {width:1080px;height:1080px}   /* 1:1  carré */
+.affiche.f916{width:1080px;height:1920px}   /* 9:16 statut WhatsApp, story, TikTok */
+.affiche.fa4 {width:1080px;height:1527px}   /* A4 portrait pour l'impression */
+.affiche.f169{width:1920px;height:1080px}   /* 16:9 bannière, écran */
+.affiche *{margin:0}
+.affiche img{display:block;max-width:none}
+.affiche ul{list-style:none;padding:0}
+.affiche b,.affiche strong{font-weight:800}
+
+/* placement : tout se pose en absolu sur la toile, puis flex à l'intérieur des blocs */
+.abs{position:absolute !important}   /* .abs gagne toujours : un composant « relative » peut ainsi être posé en absolu */
+.fond,.calque{position:absolute;inset:0}
+.pile{display:flex;flex-direction:column}
+.rang{display:flex;flex-direction:row;align-items:center}
+.centre{align-items:center;text-align:center}
+.g8{gap:8px}.g12{gap:12px}.g16{gap:16px}.g20{gap:20px}.g24{gap:24px}.g32{gap:32px}.g40{gap:40px}.g48{gap:48px}
+.z1{z-index:1}.z2{z-index:2}.z3{z-index:3}.z4{z-index:4}.z5{z-index:5}.z6{z-index:6}.z7{z-index:7}.z8{z-index:8}.z9{z-index:9}
+
+/* =====================================================================
+   F — FONDS
+   ===================================================================== */
+/* F02 dégradé simple : --angle règle la direction */
+.fond-degrade{background:linear-gradient(var(--angle,160deg),var(--fond) 0%,var(--fond2) 100%)}
+/* F02 projecteur : halo clair derrière le sujet. --px/--py placent le halo */
+.fond-radial{background:
+  radial-gradient(var(--taille,70%) var(--taille,70%) at var(--px,62%) var(--py,42%),
+    color-mix(in srgb,var(--lueur,var(--primaire)) 85%,#fff 15%) 0%,
+    color-mix(in srgb,var(--fond) 70%,var(--lueur,var(--primaire)) 30%) 38%,
+    var(--fond) 70%,var(--fond2) 100%)}
+/* F01 rideau plissé (théâtre, gala, formation) */
+.fond-rideau{background:
+  radial-gradient(130% 70% at 50% -10%,rgba(255,255,255,.16),transparent 60%),
+  linear-gradient(180deg,transparent 55%,rgba(0,0,0,.35) 100%),
+  repeating-linear-gradient(90deg,
+    color-mix(in srgb,var(--fond) 66%,#000) 0,
+    color-mix(in srgb,var(--fond) 90%,#fff 10%) calc(var(--pli,92px)*.22),
+    var(--fond) calc(var(--pli,92px)*.42),
+    color-mix(in srgb,var(--fond) 58%,#000) calc(var(--pli,92px)*.74),
+    color-mix(in srgb,var(--fond) 80%,#000) calc(var(--pli,92px)*.9),
+    color-mix(in srgb,var(--fond) 66%,#000) var(--pli,92px))}
+/* F08 fond coupé en deux couleurs. --coupe = position, --angle = inclinaison */
+.fond-split{background:linear-gradient(var(--angle,90deg),var(--fond) 0 var(--coupe,50%),var(--fond2) var(--coupe,50%) 100%)}
+/* F09 sombre vers couleur vive, en diagonale */
+.fond-diagonale{background:linear-gradient(var(--angle,115deg),var(--fond2) 0%,var(--fond2) 28%,var(--fond) 58%,color-mix(in srgb,var(--fond) 60%,#fff) 100%)}
+/* F10 anthracite avec larges bandes obliques plus claires */
+.fond-bandes{background:
+  linear-gradient(var(--angle,120deg),transparent 0 34%,rgba(255,255,255,.07) 34% 52%,transparent 52% 64%,rgba(255,255,255,.05) 64% 78%,transparent 78%),
+  linear-gradient(180deg,var(--fond),var(--fond2))}
+/* F03 / F11 photo de fond : <img class="fond-photo"> + .voile par-dessus */
+.fond-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--cadrage,center)}
+.fond-photo.flou{filter:blur(var(--flou,14px));transform:scale(1.08)}
+.voile{position:absolute;inset:0;background:var(--fond);opacity:var(--force,.82)}
+.voile.teinte{mix-blend-mode:multiply;opacity:1;background:color-mix(in srgb,var(--fond) 80%,#fff)}
+.voile.bas{opacity:1;background:linear-gradient(180deg,transparent var(--debut,30%),color-mix(in srgb,var(--fond) 88%,transparent) var(--milieu,62%),var(--fond) 100%)}
+.voile.haut{opacity:1;background:linear-gradient(0deg,transparent var(--debut,45%),color-mix(in srgb,var(--fond) 85%,transparent) 100%)}
+.voile.gauche{opacity:1;background:linear-gradient(90deg,var(--fond) 0%,color-mix(in srgb,var(--fond) 80%,transparent) var(--milieu,45%),transparent 100%)}
+
+/* Motifs à poser par-dessus un fond (calques) */
+/* F04 grille de points */
+.motif-points{position:absolute;inset:0;background-image:radial-gradient(circle,var(--motif,rgba(255,255,255,.16)) 1.6px,transparent 2px);background-size:var(--pas,26px) var(--pas,26px)}
+/* F07 trame demi-teinte qui s'efface (coin ou bord) */
+.motif-trame{position:absolute;width:var(--l,460px);height:var(--h,460px);
+  background-image:radial-gradient(circle,var(--motif,rgba(255,255,255,.28)) 2.6px,transparent 3.2px);background-size:15px 15px;
+  -webkit-mask-image:radial-gradient(closest-side,#000 0%,transparent 100%);mask-image:radial-gradient(closest-side,#000 0%,transparent 100%)}
+/* F05 ondes concentriques ton sur ton */
+.motif-ondes{position:absolute;inset:0;background:repeating-radial-gradient(circle at var(--px,85%) var(--py,10%),transparent 0 46px,var(--motif,rgba(255,255,255,.055)) 46px 48px)}
+/* F05 grandes vagues ton sur ton (calque SVG posé par kit.js : data-motif="vagues") */
+/* F12 fines lignes obliques */
+.motif-lignes{position:absolute;inset:0;background:repeating-linear-gradient(var(--angle,115deg),transparent 0 150px,var(--motif,rgba(255,255,255,.10)) 150px 152px)}
+/* grille fine (tech, crypto, IA) */
+.motif-grille{position:absolute;inset:0;background-image:linear-gradient(var(--motif,rgba(255,255,255,.07)) 1px,transparent 1px),linear-gradient(90deg,var(--motif,rgba(255,255,255,.07)) 1px,transparent 1px);background-size:var(--pas,72px) var(--pas,72px);
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 30%,#000 30%,transparent 85%);mask-image:radial-gradient(120% 90% at 50% 30%,#000 30%,transparent 85%)}
+/* F13 grande forme douce ton sur ton */
+.forme-douce{position:absolute;border-radius:50%;background:var(--couleur,rgba(255,255,255,.06))}
+/* F06 / D10 lueur : tache de lumière floue. À placer derrière le sujet ou dans un coin */
+.lueur{position:absolute;width:var(--d,520px);height:var(--d,520px);border-radius:50%;
+  background:radial-gradient(closest-side,var(--couleur,var(--primaire)) 0%,color-mix(in srgb,var(--couleur,var(--primaire)) 45%,transparent) 45%,transparent 100%);
+  filter:blur(var(--flou,30px));opacity:var(--force,.9);pointer-events:none}
+/* F06 reflet d'objectif : trait de lumière horizontal */
+.reflet{position:absolute;height:4px;width:var(--l,360px);border-radius:50%;
+  background:radial-gradient(closest-side,#fff 0%,var(--couleur,#9db8ff) 30%,transparent 100%);
+  box-shadow:0 0 22px 5px color-mix(in srgb,var(--couleur,#6f8fff) 60%,transparent);opacity:var(--force,.9)}
+/* grain de pellicule très léger : donne un rendu « imprimé » aux aplats */
+.grain{position:absolute;inset:0;opacity:var(--force,.10);mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.vignette{position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 45%,transparent 55%,rgba(0,0,0,var(--force,.45)) 100%);pointer-events:none}
+
+/* =====================================================================
+   B — BAS DE L'AFFICHE
+   ===================================================================== */
+/* B02 socle : feuille claire qui monte du bas, coins hauts très arrondis */
+.socle{position:absolute;left:0;right:0;bottom:0;height:var(--h,300px);background:var(--couleur,var(--clair));color:var(--encre);
+  border-radius:var(--arrondi,70px) var(--arrondi,70px) 0 0}
+.socle.arc{border-radius:50% 50% 0 0 / var(--courbe,90px) var(--courbe,90px) 0 0}
+/* liseré de couleur qui dépasse derrière le socle (affiche Copywriting) */
+.socle.lisere::before{content:"";position:absolute;left:var(--retrait,60px);right:var(--retrait,60px);top:-14px;height:60px;background:var(--accent);border-radius:40px 40px 0 0;z-index:-1}
+/* B03 bande droite pleine largeur */
+.bande-pied{position:absolute;left:0;right:0;bottom:var(--bas,0px);height:var(--h,130px);background:var(--couleur,var(--clair));color:var(--encre);
+  display:flex;align-items:center;justify-content:space-between;gap:28px;padding:0 var(--marge)}
+/* B04 sol / table : surface claire au premier plan, sur laquelle on pose un produit */
+.sol{position:absolute;left:0;right:0;bottom:0;height:var(--h,260px);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--couleur,#E9E9EC) 92%,#fff) 0%,var(--couleur,#E9E9EC) 40%,color-mix(in srgb,var(--couleur,#E9E9EC) 72%,#000) 100%);
+  box-shadow:0 -1px 0 rgba(255,255,255,.5),0 -30px 60px -30px rgba(0,0,0,.45)}
+/* B01 vague : <div class="vague" data-vague="douce"> — la forme est dessinée par kit.js */
+.vague{position:absolute;left:0;right:0;bottom:0;height:var(--h,360px);color:var(--couleur,var(--clair));pointer-events:none}
+.vague svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* =====================================================================
+   T — TITRES ET TYPOGRAPHIE
+   ===================================================================== */
+.titre{font-family:var(--f-titre),sans-serif;font-weight:800;line-height:.98;letter-spacing:-.015em;text-wrap:balance}
+.texte{font-family:var(--f-texte),sans-serif}
+.maj{text-transform:uppercase}
+.w3{font-weight:300}.w4{font-weight:400}.w5{font-weight:500}.w6{font-weight:600}.w7{font-weight:700}.w8{font-weight:800}.w9{font-weight:900}
+.italique{font-style:italic}
+.large{font-stretch:125%}      /* T01 capitales très larges : seulement avec la police Archivo */
+.etroit{font-stretch:68%}      /* capitales étroites et hautes : seulement avec Archivo */
+.serre{letter-spacing:-.03em}
+.aere{letter-spacing:.18em}
+.c-accent{color:var(--accent)}.c-accent2{color:var(--accent2)}.c-primaire{color:var(--primaire)}
+.c-clair{color:var(--clair)}.c-encre{color:var(--encre)}.c-doux{color:var(--doux)}.c-texte{color:var(--texte)}
+.ombre-texte{text-shadow:0 4px 18px rgba(0,0,0,.45)}
+
+/* T03 mot surligné : bloc de couleur derrière le texte */
+.surligne{background:var(--surligne,var(--accent));color:var(--encre);padding:.02em .22em .06em;border-radius:var(--rs,.06em);
+  box-decoration-break:clone;-webkit-box-decoration-break:clone}
+/* .bloc : un seul pavé pour tout le texte (peut être penché) */
+.surligne.bloc{display:inline-block;line-height:1.08}
+.surligne.incline{display:inline-block;line-height:1.08;transform:rotate(var(--rot,-2deg))}
+/* T06 texte en dégradé (--g1 haut, --g2 bas) et finitions métal */
+.degrade-texte,.metal-argent,.metal-or{-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;padding-bottom:.08em}
+.degrade-texte{background-image:linear-gradient(var(--angle,180deg),var(--g1,#fff),var(--g2,var(--accent)))}
+.metal-argent{background-image:linear-gradient(180deg,#ffffff 0%,#f1f1f1 38%,#9a9a9a 62%,#e9e9e9 100%)}
+.metal-or{background-image:linear-gradient(180deg,#fff3b0 0%,#ffd23c 40%,#c98a0a 68%,#ffe07a 100%)}
+/* T07 texte en relief brillant avec lueur. --t1/--t2 dégradé, --t3 tranche, --halo lueur */
+.texte-3d{background-image:linear-gradient(180deg,#fff 0%,var(--t1,#d6dcff) 42%,var(--t2,#8d9cf0) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;padding-bottom:.1em;
+  filter:drop-shadow(0 3px 0 var(--t3,#3848b8)) drop-shadow(0 7px 0 rgba(0,0,0,.28)) drop-shadow(0 0 26px var(--halo,rgba(86,120,255,.75)))}
+/* texte en contour seul */
+.contour-texte{color:transparent;-webkit-text-stroke:var(--trait,2.5px) var(--couleur,var(--texte))}
+/* T05 mot manuscrit posé en travers du titre */
+.script{font-family:var(--f-script),cursive;font-weight:400;line-height:1;letter-spacing:0;text-transform:none}
+/* T11 sur-titre : petites capitales espacées, entre deux filets */
+.surtitre{display:inline-flex;align-items:center;gap:22px;font-size:22px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--doux)}
+.surtitre.filets::before,.surtitre.filets::after{content:"";width:var(--lf,54px);height:2px;background:currentColor;opacity:.6}
+/* T10 sous-titre encadré par deux filets fins */
+.entre-filets{padding:16px 0;border-top:2px solid var(--couleur,currentColor);border-bottom:2px solid var(--couleur,currentColor)}
+/* T13 descripteur à côté du titre, séparé par un filet vertical */
+.barre-v{padding-left:22px;border-left:3px solid var(--couleur,var(--doux))}
+/* T08 mot géant vertical sur un bord */
+.vertical{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;line-height:.8}
+.vertical.haut-bas{transform:none}
+/* D11 filet */
+.filet{display:block;height:2px;width:var(--l,100%);background:var(--couleur,currentColor);opacity:var(--force,.55);border:0}
+.filet.v{width:2px;height:var(--h,60px)}
+.filet.pointille{background:none;border-top:2px dashed var(--couleur,currentColor);height:0}
+.filet.v.pointille{border-top:0;border-left:2px dashed var(--couleur,currentColor);width:0}
+/* T12 trait de pinceau sous un titre : <span class="trait-pinceau" data-forme="1"></span> */
+.trait-pinceau{display:block;width:var(--l,420px);height:var(--h,34px);color:var(--couleur,var(--accent))}
+.trait-pinceau svg{width:100%;height:100%;display:block;overflow:visible}
+
+/* =====================================================================
+   P — PANNEAUX ET CARTES
+   ===================================================================== */
+.panneau{position:relative;border-radius:var(--rayon);padding:var(--pad,44px 44px)}
+/* P01 verre dépoli */
+.verre{background:var(--verre,rgba(255,255,255,.11));border:1.5px solid var(--bord,rgba(255,255,255,.30));
+  -webkit-backdrop-filter:blur(var(--flou,18px)) saturate(140%);backdrop-filter:blur(var(--flou,18px)) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 24px 50px -24px rgba(0,0,0,.55)}
+.verre.sombre{--verre:rgba(0,0,0,.34);--bord:rgba(255,255,255,.20)}
+.verre.clair{--verre:rgba(255,255,255,.78);--bord:rgba(255,255,255,.9);color:var(--encre)}
+.verre.teinte{--verre:color-mix(in srgb,var(--primaire) 32%,transparent);--bord:color-mix(in srgb,var(--primaire) 55%,#fff 45%)}
+/* P02 contour fin, fond vide */
+.contour{background:transparent;border:1.5px solid var(--bord,rgba(255,255,255,.55))}
+/* P03 plein sombre avec liseré clair */
+.sombre{background:var(--sombre,#0b0b0d);border:1.5px solid var(--bord,rgba(255,255,255,.55));color:#fff}
+/* panneau plein couleur de marque */
+.plein{background:var(--primaire);color:var(--sur-primaire,#fff)}
+.plein.degrade{background:linear-gradient(var(--angle,135deg),var(--g1,var(--primaire)),var(--g2,color-mix(in srgb,var(--primaire) 55%,#000)))}
+/* P04 carte claire avec ombre douce */
+.carte{background:var(--clair);color:var(--encre);box-shadow:0 26px 60px -22px rgba(0,0,0,.50)}
+.carte.creme{background:#FBF3DC}
+/* bordure lumineuse : claire en haut, qui s'efface (affiches Clirap, Conditions) */
+.bord-lumineux{border:0}
+.bord-lumineux::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:var(--ep,2.5px);pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.10) 55%,rgba(255,255,255,.40) 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+/* halo de couleur autour d'un panneau */
+.halo{box-shadow:0 0 0 1.5px color-mix(in srgb,var(--couleur,var(--primaire)) 70%,#fff 30%),0 0 46px -6px var(--couleur,var(--primaire)),inset 0 0 38px -12px var(--couleur,var(--primaire))}
+/* P13 panneau collé sous une carte : pas d'arrondi en haut */
+.colle-haut{border-top-left-radius:0;border-top-right-radius:0}
+.colle-bas{border-bottom-left-radius:0;border-bottom-right-radius:0}
+/* P14 barre de réassurance : une barre (souvent .panneau.verre.clair) qui aligne 2 ou 3 pilules à icône */
+.reassurance{display:flex;align-items:center;gap:var(--gap,16px);padding:var(--pad,18px)}
+.pilule.avec-ic{padding-left:.36em;justify-content:flex-start;gap:.6em}
+/* P06 onglet : étiquette à cheval sur le bord haut du panneau */
+.onglet{position:absolute;top:0;left:var(--decal,44px);transform:translateY(-55%);z-index:2;white-space:nowrap}
+.onglet.centre{left:50%;transform:translate(-50%,-55%)}
+.onglet.droite{left:auto;right:var(--decal,44px)}
+/* variante « dossier » : posé sur le bord, coins hauts arrondis seulement (affiche MRR) */
+.onglet.dossier{transform:translateY(-100%);border-radius:18px 18px 0 0 !important;left:var(--decal,28px)}
+/* P07 étiquette verticale sur le bord gauche intérieur */
+.etiquette-v{position:absolute;left:18px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.8;white-space:nowrap}
+/* P05 bulle : carte dont un coin est coupé net, avec un pointeur */
+.bulle{border-radius:var(--rayon) var(--rayon) var(--rayon) 0}
+.bulle.haut-droite{border-radius:var(--rayon) 0 var(--rayon) var(--rayon)}
+/* P10 carte inclinée flottante */
+.incline{transform:rotate(var(--rot,-6deg))}
+/* P08 carte d'étape numérotée */
+.etape{display:flex;align-items:center;gap:30px;padding:26px 34px}
+.etape .num{flex:none;width:var(--d,86px);height:var(--d,86px);border-radius:50%;display:grid;place-items:center;font-family:var(--f-titre);font-weight:800;font-size:calc(var(--d,86px)*.42);
+  background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--primaire) 80%,#fff),var(--primaire) 55%,color-mix(in srgb,var(--primaire) 55%,#000));color:#fff;
+  box-shadow:0 0 0 2px rgba(255,255,255,.18),0 0 26px -2px var(--primaire)}
+.etape .num.accent{background:var(--accent);color:var(--encre);box-shadow:none}
+.etape .sep{flex:none;width:2px;align-self:stretch;background:currentColor;opacity:.35}
+/* P09 grille bento : cartes colorées juxtaposées */
+.bento{display:grid;gap:var(--gap,22px)}
+/* P11 bloc date (événement) */
+.bloc-date{display:inline-flex;flex-direction:column;align-items:flex-start;position:relative}
+.bloc-date .jour{background:var(--clair);color:var(--encre);font-family:var(--f-titre);font-weight:900;line-height:1;padding:.14em .28em .1em;font-size:var(--taille,120px);letter-spacing:-.03em}
+.bloc-date .petit{background:color-mix(in srgb,var(--accent) 90%,#fff);color:var(--encre);font-weight:700;font-size:28px;padding:4px 22px;margin-bottom:-2px;margin-left:16px;position:relative;z-index:1}
+.bloc-date .annee{background:var(--accent2);color:#fff;font-weight:800;font-style:italic;font-size:44px;padding:2px 22px;transform:rotate(-4deg) translate(40%,-35%);align-self:flex-end;margin-bottom:-30px}
+/* P12 lignes d'informations empilées, chacune dans un style différent */
+.infos{display:flex;flex-direction:column;gap:var(--gap,18px)}
+.info-ligne{display:flex;align-items:center;gap:18px}
+.info-ligne .cle{flex:none;background:var(--clair);color:var(--encre);font-weight:600;padding:10px 20px;border-radius:14px}
+.info-ligne.surlignee{background:var(--accent);color:var(--encre);padding:8px 18px;border-radius:6px}
+.info-ligne.surlignee .cle{background:none;padding:0;font-size:1.25em}
+
+/* =====================================================================
+   E — PILULES, ÉTIQUETTES, BADGES
+   ===================================================================== */
+.pilule{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.46em 1.1em;border-radius:999px;font-weight:700;line-height:1.1;white-space:nowrap;
+  background:var(--primaire);color:var(--sur-primaire,#fff)}
+.pilule.accent{background:var(--accent);color:var(--encre)}
+.pilule.accent2{background:var(--accent2);color:#fff}
+.pilule.blanc{background:var(--clair);color:var(--encre)}
+.pilule.noir{background:#0b0b0d;color:#fff}
+.pilule.contour{background:transparent;color:inherit;border:2px solid currentColor}
+.pilule.verre{background:rgba(255,255,255,.14);color:inherit;border:1.5px solid rgba(255,255,255,.34);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.pilule.degrade{background:linear-gradient(var(--angle,180deg),var(--g1,color-mix(in srgb,var(--accent) 70%,#fff)),var(--g2,var(--accent)));color:var(--encre)}
+.pilule.carre{border-radius:var(--rp,16px)}
+.pilule.relief{box-shadow:inset 0 2px 0 rgba(255,255,255,.35),inset 0 -3px 0 rgba(0,0,0,.18),0 10px 22px -8px rgba(0,0,0,.5)}
+.pilule.ombre{box-shadow:0 12px 26px -10px rgba(0,0,0,.55)}
+.pilule.pointille{background:color-mix(in srgb,var(--primaire) 55%,transparent);border:2px dashed rgba(255,255,255,.75)}
+.pilule.penche{transform:rotate(var(--rot,-3deg))}
+/* E05 étiquette autocollant : un double clair décalé derrière */
+.pilule.autocollant{box-shadow:6px 7px 0 0 var(--clair)}
+/* E05 étiquette en parallélogramme */
+.pilule.biais{border-radius:4px;transform:skewX(-12deg) rotate(var(--rot,-4deg))}
+.pilule.biais>*{transform:skewX(12deg)}
+/* E04 pilule double : libellé plein + valeur */
+.pilule-double{display:inline-flex;align-items:center;gap:22px;padding:8px 30px 8px 8px;border-radius:999px;border:2px solid var(--bord,rgba(255,255,255,.75));white-space:nowrap}
+.pilule-double .cle{padding:.42em 1em;border-radius:999px;background:var(--primaire);color:var(--sur-primaire,#fff);font-weight:700}
+.pilule-double .cle.accent{background:var(--accent);color:var(--encre)}
+.pilule-double .cle.accent2{background:var(--accent2);color:#fff}
+.pilule-double .cle.blanc{background:var(--clair);color:var(--encre)}
+.pilule-double .val{font-weight:800;font-size:1.25em}
+/* E07 badge rond */
+.badge-rond{display:grid;place-items:center;text-align:center;width:var(--d,170px);height:var(--d,170px);border-radius:50%;
+  background:var(--couleur,var(--accent2));color:var(--sur,#fff);font-weight:800;line-height:1.05;padding:calc(var(--d,170px)*.12);
+  box-shadow:0 14px 30px -10px rgba(0,0,0,.55),inset 0 3px 0 rgba(255,255,255,.28);transform:rotate(var(--rot,0deg))}
+.badge-rond.lisere{outline:4px solid var(--clair);outline-offset:-4px}
+/* E06 badge éclat (étoile dentelée) et E08 badge nuage : la forme est tracée par kit.js */
+.badge-eclat,.badge-nuage{position:relative;display:grid;place-items:center;text-align:center;width:var(--d,190px);height:var(--d,190px);
+  color:var(--sur,#fff);font-weight:800;line-height:1.05;padding:calc(var(--d,190px)*.2);transform:rotate(var(--rot,0deg));
+  filter:drop-shadow(0 14px 18px rgba(0,0,0,.35))}
+.badge-eclat>.forme,.badge-nuage>.forme{position:absolute;inset:0;width:100%;height:100%;color:var(--couleur,var(--accent2));z-index:-1}
+.badge-eclat>*:not(.forme),.badge-nuage>*:not(.forme){position:relative}
+/* E09 ticket de prix : bords crantés + épingle */
+.ticket{position:relative;display:inline-flex;flex-direction:column;align-items:center;padding:16px 34px 14px;background:var(--couleur,var(--accent));color:var(--sur,var(--encre));
+  font-weight:800;line-height:1;transform:rotate(var(--rot,0deg));
+  --c:9px;-webkit-mask:radial-gradient(circle var(--c) at 0 50%,transparent 97%,#000) left/51% calc(var(--c)*2.6) repeat-y,radial-gradient(circle var(--c) at 100% 50%,transparent 97%,#000) right/51% calc(var(--c)*2.6) repeat-y;
+  mask:radial-gradient(circle var(--c) at 0 50%,transparent 97%,#000) left/51% calc(var(--c)*2.6) repeat-y,radial-gradient(circle var(--c) at 100% 50%,transparent 97%,#000) right/51% calc(var(--c)*2.6) repeat-y}
+.ticket .petit{font-size:.36em;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.epingle{position:absolute;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--couleur,#2fd05a) 45%,color-mix(in srgb,var(--couleur,#2fd05a) 60%,#000));box-shadow:0 4px 6px rgba(0,0,0,.4)}
+/* E14 petite puce rectangulaire (drapeau + sigle, certification) */
+.chip{display:inline-flex;align-items:center;gap:10px;background:var(--clair);color:var(--encre);font-weight:800;font-size:22px;padding:7px 14px;border-radius:8px;line-height:1;white-space:nowrap}
+/* E03 petites pastilles de caractéristiques, contour fin */
+.chips{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.chips .pilule{font-weight:500;font-size:24px;padding:.5em 1em}
+/* E13 micro-étiquette posée au-dessus d'un bloc */
+.micro{position:absolute;top:0;left:var(--decal,24px);transform:translateY(-60%);font-size:16px;font-weight:700;padding:4px 14px;border-radius:999px;background:var(--primaire);color:#fff;white-space:nowrap}
+/* E16 pastille d'icône + légende dessous */
+.pastille{display:inline-flex;flex-direction:column;align-items:center;gap:10px;text-align:center;font-size:20px;line-height:1.15;font-weight:500}
+/* E15 note / avis */
+.note{display:inline-flex;align-items:center;gap:12px;font-weight:600}
+.etoiles{display:inline-flex;gap:.12em;color:var(--couleur,#FFC83D);font-size:var(--taille,30px)}
+/* E17 badges des boutiques d'applications */
+.store{display:inline-flex;align-items:center;gap:12px;white-space:nowrap;background:var(--clair);color:var(--encre);border-radius:14px;padding:10px 20px 10px 16px;line-height:1.05;box-shadow:0 10px 22px -10px rgba(0,0,0,.5)}
+.store.noir{background:#0b0b0d;color:#fff}
+.store .ic{font-size:40px}
+.store small{display:block;font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;opacity:.75}
+.store b{display:block;font-size:24px;font-weight:700}
+
+/* =====================================================================
+   K — ICÔNES   <i class="ic" data-ic="phone"></i>
+   noms Phosphor (défaut : plein). "nom:bold", "nom:regular". Marques : "m:whatsapp"
+   ===================================================================== */
+.ic{display:inline-block;flex:none;width:1em;height:1em;line-height:1;vertical-align:-.14em}
+.ic svg{display:block;width:100%;height:100%;fill:currentColor}
+.ic-rond>svg,.ic-carre>svg,.ic-anneau>svg,.tuile-3d>svg{display:block;width:1em;height:1em;fill:currentColor}
+/* icône dans un rond plein */
+.ic-rond,.ic-carre,.ic-anneau{display:inline-grid;place-items:center;flex:none;width:var(--d,56px);height:var(--d,56px);font-size:calc(var(--d,56px)*.56);
+  background:var(--ic-fond,var(--accent));color:var(--ic-couleur,var(--encre));border-radius:50%}
+.ic-carre{border-radius:26%}
+.ic-anneau{background:transparent;border:2.5px solid currentColor;color:var(--ic-couleur,currentColor)}
+.ic-rond.blanc,.ic-carre.blanc{--ic-fond:#fff;--ic-couleur:var(--encre)}
+.ic-rond.relief,.ic-carre.relief{box-shadow:inset 0 2px 0 rgba(255,255,255,.4),inset 0 -3px 0 rgba(0,0,0,.2),0 8px 16px -6px rgba(0,0,0,.5)}
+/* D02 tuile de marque en faux 3D : <span class="tuile-3d" data-ic="m:facebook" style="--c:#1877F2"> */
+.tuile-3d{display:inline-grid;place-items:center;width:var(--d,170px);height:var(--d,170px);font-size:calc(var(--d,170px)*.58);color:var(--glyphe,#fff);border-radius:26%;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--c,#1877F2) 78%,#fff) 0%,var(--c,#1877F2) 45%,color-mix(in srgb,var(--c,#1877F2) 70%,#000) 100%);
+  box-shadow:inset 0 calc(var(--d,170px)*.03) 0 rgba(255,255,255,.45),inset 0 calc(var(--d,170px)*-.04) 0 rgba(0,0,0,.22),
+    calc(var(--d,170px)*.05) calc(var(--d,170px)*.07) 0 color-mix(in srgb,var(--c,#1877F2) 55%,#000),0 calc(var(--d,170px)*.2) calc(var(--d,170px)*.25) -8px rgba(0,0,0,.45);
+  transform:rotate(var(--rot,-14deg))}
+.tuile-3d.rond{border-radius:50%}
+.tuile-3d .ic svg,.tuile-3d svg{filter:drop-shadow(0 3px 3px rgba(0,0,0,.25))}
+
+/* =====================================================================
+   L — LISTES   <ul class="liste" data-puce="check-rond">
+   ===================================================================== */
+.liste{display:grid;gap:var(--gap,22px)}
+.liste>li{display:flex;align-items:flex-start;gap:var(--ecart,20px);line-height:1.22}
+.liste>li>.puce{flex:none;margin-top:var(--cale,.08em);font-size:var(--tp,1.25em);color:var(--puce,var(--accent));display:inline-grid;place-items:center}
+.liste>li>.puce.pleine{width:1.08em;height:1.08em;border-radius:50%;background:var(--puce,var(--accent));color:var(--sur-puce,var(--encre))}
+.liste>li>.puce.pleine .ic{font-size:.66em}
+.liste>li>.puce.blanche{width:1.08em;height:1.08em;border-radius:50%;background:#fff;color:var(--puce,var(--accent2));box-shadow:0 0 0 .08em var(--puce,var(--accent2))}
+.liste>li>.puce.blanche .ic{font-size:.7em}
+.liste>li>.puce.num{width:1.5em;height:1.5em;border-radius:50%;background:var(--puce,var(--accent));color:var(--sur-puce,var(--encre));font-weight:800;font-size:.9em;font-family:var(--f-titre)}
+.liste>li>.puce.point{width:.42em;height:.42em;margin-top:.42em;border-radius:50%;background:var(--puce,currentColor)}
+.liste.col2{grid-template-columns:1fr 1fr;column-gap:38px}
+/* L06 filets entre les lignes */
+.liste.separee{gap:0}
+.liste.separee>li{padding:var(--pl,16px) 0;border-bottom:1.5px solid var(--trait,rgba(0,0,0,.18))}
+.liste.separee>li:last-child{border-bottom:0}
+/* L07 chaque ligne dans sa propre pilule */
+.liste.rangees{gap:var(--gap,12px)}
+.liste.rangees>li{align-items:center;padding:.42em 1em;border-radius:999px;background:var(--rangee,linear-gradient(90deg,rgba(255,255,255,.55),rgba(255,255,255,.08)));color:var(--encre)}
+.liste.rangees>li>.puce{margin-top:0}
+/* L11 ligne bonus mise en avant */
+.liste>li.bonus>div>b:first-child,.liste>li.bonus>span>b:first-child{display:block;color:var(--accent);letter-spacing:.04em}
+
+/* =====================================================================
+   X — PRIX
+   ===================================================================== */
+/* X01 duo de pavés : libellé au-dessus, pavé dessous */
+.prix-duo{display:inline-flex;align-items:flex-end;gap:var(--gap,26px)}
+.prix-case{display:flex;flex-direction:column;align-items:center;gap:10px}
+.prix-case .libelle{font-size:26px;font-weight:400;color:var(--doux)}
+.pave{display:inline-flex;align-items:baseline;justify-content:center;gap:.14em;padding:.2em .5em .16em;border-radius:var(--rp,12px);font-family:var(--f-titre);font-weight:900;font-size:var(--taille,62px);line-height:1;white-space:nowrap;
+  box-shadow:inset 0 3px 0 rgba(255,255,255,.35),inset 0 -4px 0 rgba(0,0,0,.16),0 12px 24px -10px rgba(0,0,0,.6)}
+.pave.ancien{background:var(--couleur,var(--accent));color:var(--encre)}
+.pave.nouveau{background:var(--couleur,var(--accent2));color:#fff;outline:2px solid rgba(255,255,255,.65);outline-offset:-5px}
+.pave.pilule-forme{border-radius:999px;padding:.3em .8em}
+.pave.gris{background:#E6E6E6;color:#3b3b3b}
+/* prix barré : trait horizontal, ou en diagonale avec .diag */
+.barre{position:relative;display:inline-block}
+.barre::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:max(3px,.07em);background:var(--trait,currentColor);border-radius:2px}
+.barre.diag::after{transform:rotate(-9deg)}
+.barre.rouge{--trait:#E0202A}
+.devise{font-size:.5em;font-weight:700;letter-spacing:.02em}
+/* X02 pilule de prix avec son petit libellé intégré */
+.prix-pilule{display:inline-flex;flex-direction:column;align-items:center;padding:12px 38px 14px;border-radius:999px;line-height:1.05;font-family:var(--f-titre);white-space:nowrap}
+.prix-pilule small{font-size:19px;font-weight:700;opacity:.8}
+.prix-pilule b{font-size:var(--taille,44px);font-weight:800}
+.prix-pilule.ancien{background:#E9E9E9;color:#4a4a4a}
+.prix-pilule.nouveau{background:var(--accent);color:var(--encre)}
+/* X04 grande carte de prix */
+.carte-prix{display:flex;flex-direction:column;gap:6px;padding:30px 38px;border-radius:var(--rayon);color:#fff;
+  background:linear-gradient(160deg,color-mix(in srgb,var(--primaire) 80%,#fff 20%),var(--primaire) 45%,color-mix(in srgb,var(--primaire) 60%,#000));
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 22px 40px -18px color-mix(in srgb,var(--primaire) 70%,#000)}
+.carte-prix .ligne{display:flex;align-items:center;gap:14px;font-size:24px;font-weight:600}
+.carte-prix .ligne::after{content:"";flex:1;height:1.5px;background:currentColor;opacity:.6}
+.carte-prix .ligne.fin{justify-content:flex-end;font-style:italic;font-weight:400;font-size:21px}
+.carte-prix .ligne.fin::after{display:none}
+.carte-prix .ligne.fin::before{content:"";flex:1;height:1.5px;background:currentColor;opacity:.6}
+.carte-prix .montant{font-family:var(--f-titre);font-weight:900;font-size:var(--taille,96px);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+/* X03 cartes ancien / nouveau prix empilées */
+.prix-carte{display:flex;align-items:center;justify-content:space-between;gap:26px;padding:18px 30px;border-radius:18px;font-family:var(--f-titre);white-space:nowrap}
+.prix-carte small{font-size:24px;font-weight:600}
+.prix-carte b{font-size:var(--taille,64px);font-weight:900;line-height:1}
+.prix-carte.ancien{background:var(--clair);color:color-mix(in srgb,var(--primaire) 55%,#fff)}
+.prix-carte.ancien small{color:color-mix(in srgb,var(--primaire) 80%,#000)}
+.prix-carte.nouveau{background:linear-gradient(160deg,color-mix(in srgb,var(--primaire) 85%,#fff 15%),color-mix(in srgb,var(--primaire) 70%,#000));color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+.prix-carte.nouveau small{color:var(--accent)}
+/* X07 ligne de prix : ancien barré, flèche, nouveau en très gros */
+.prix-ligne{display:inline-flex;align-items:baseline;gap:26px;font-family:var(--f-titre);white-space:nowrap}
+.prix-ligne .ancien{font-size:var(--petit,46px);font-weight:700;color:var(--doux)}
+.prix-ligne .fleche{font-size:40px;color:var(--doux);align-self:center}
+.prix-ligne .nouveau{font-size:var(--taille,104px);font-weight:900;color:var(--accent);line-height:.9;letter-spacing:-.02em}
+.prix-ligne .devise{font-size:.3em;color:var(--texte);margin-left:.2em}
+.prix-ligne .ancien .devise{font-size:.5em;color:inherit}
+/* X08 mention sous le prix */
+.mention{font-size:22px;letter-spacing:.2em;font-weight:500;color:var(--doux)}
+/* X05 prix géant dans une carte carrée */
+.prix-geant{font-family:var(--f-titre);font-weight:900;line-height:.9;letter-spacing:-.02em;font-size:var(--taille,150px);white-space:nowrap}
+.prix-geant .devise{font-weight:500;font-size:.62em}
+
+/* =====================================================================
+   C — APPELS À L'ACTION
+   ===================================================================== */
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:16px;padding:.62em 1.5em;border-radius:999px;font-weight:700;font-size:30px;line-height:1.1;white-space:nowrap;
+  background:var(--accent);color:var(--encre);box-shadow:0 16px 30px -14px rgba(0,0,0,.6)}
+.cta.primaire{background:var(--primaire);color:#fff}
+.cta.blanc{background:var(--clair);color:var(--encre)}
+.cta.noir{background:#0b0b0d;color:#fff}
+.cta.contour{background:transparent;color:inherit;border:2px solid currentColor;box-shadow:none}
+.cta.carre{border-radius:16px}
+.cta.degrade{background:linear-gradient(160deg,var(--g1,color-mix(in srgb,var(--primaire) 80%,#fff)),var(--g2,color-mix(in srgb,var(--primaire) 65%,#000)));color:#fff}
+.cta .point{width:.56em;height:.56em;border-radius:50%;background:var(--accent)}
+.cta.blanc .point{background:var(--accent)}
+/* C01 languette suspendue en haut du socle */
+.languette{border-radius:0 0 34px 34px;box-shadow:0 18px 30px -16px rgba(0,0,0,.35)}
+/* C04 adresse du site façon barre de recherche */
+.url{display:inline-flex;align-items:center;gap:18px;padding:8px 10px 8px 10px;border-radius:999px;background:var(--accent);color:var(--encre);font-weight:600;font-size:28px;white-space:nowrap}
+.url .ic-rond{--d:48px;--ic-fond:var(--encre);--ic-couleur:var(--accent)}
+.url span{padding:0 22px 0 6px}
+/* C05 ovale tracé à la main autour d'un texte : <span class="ovale-main"> */
+.ovale-main{position:relative;display:inline-grid;place-items:center;text-align:center;padding:26px 62px;font-weight:700;line-height:1.1}
+.ovale-main>.forme{position:absolute;inset:-6%;width:112%;height:112%;color:var(--couleur,currentColor);pointer-events:none}
+/* C06 phrase d'appel en capitales fines + flèche */
+.appel{display:inline-flex;align-items:center;gap:18px;font-weight:300;letter-spacing:.06em;text-transform:uppercase}
+.triangle-bas{width:0;height:0;border-left:.36em solid transparent;border-right:.36em solid transparent;border-top:.5em solid var(--couleur,var(--accent2));display:inline-block}
+/* C04 curseur de souris posé sur un bouton */
+.curseur{position:absolute;width:var(--d,54px);height:var(--d,54px);filter:drop-shadow(0 6px 6px rgba(0,0,0,.45))}
+
+/* =====================================================================
+   J — PIED DE PAGE ET CONTACTS
+   ===================================================================== */
+.barre-contact{display:flex;align-items:center;justify-content:space-between;gap:26px;padding:22px 44px;border-radius:var(--rb,38px);background:var(--primaire);color:#fff;font-weight:500;font-size:28px;line-height:1.18}
+.barre-contact.noir{background:#0b0b0d}
+.barre-contact.blanc{background:var(--clair);color:var(--encre);box-shadow:0 18px 40px -20px rgba(0,0,0,.5)}
+.barre-contact.verre{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.barre-contact.accent{background:var(--accent);color:var(--encre)}
+/* forme un peu penchée aux extrémités (affiche Copywriting) */
+.barre-contact.biseau{border-radius:34px 60px 34px 60px}
+.contact{display:inline-flex;align-items:center;gap:16px;white-space:nowrap}
+.contact.multi{white-space:normal}
+.contact .ic-rond{--d:52px}
+.tiret{flex:none;width:var(--l,54px);height:2px;background:currentColor;opacity:.7}
+.reseaux{display:inline-flex;align-items:center;gap:12px;font-weight:600;white-space:nowrap}
+.reseaux .ic-rond{--d:44px}
+/* J06 numéro dans une étiquette, relié au reste par un filet */
+.infoline{position:relative;display:inline-flex;align-items:center;gap:10px;padding:12px 30px;border-radius:10px;background:color-mix(in srgb,var(--primaire) 40%,#000);color:#fff;font-size:30px;font-weight:300;white-space:nowrap}
+.infoline b{font-weight:800}
+
+/* =====================================================================
+   D — DÉCORATIONS
+   ===================================================================== */
+/* D01 / D02 / D03 objets 3D : <img class="deco3d" src="{{KIT}}/3d/etoile.png"> */
+.deco3d{position:absolute;width:var(--d,160px);height:auto;transform:rotate(var(--rot,0deg));filter:drop-shadow(0 16px 16px rgba(0,0,0,.32));pointer-events:none}
+/* profondeur de champ : plus l'objet est « près de l'objectif », plus il est flou et grand */
+.flou1{filter:blur(2.5px) drop-shadow(0 16px 16px rgba(0,0,0,.25))}
+.flou2{filter:blur(6px)}
+.flou3{filter:blur(11px)}
+.file{filter:blur(3px);transform:rotate(var(--rot,0deg)) skewX(-8deg) scaleX(1.12)} /* flou de mouvement */
+/* D04 coups de pinceau : <div class="pinceau" data-forme="1"> (tracé par kit.js) */
+.pinceau{position:absolute;width:var(--l,520px);height:var(--h,520px);color:var(--couleur,#fff);transform:rotate(var(--rot,0deg));pointer-events:none}
+.pinceau svg{width:100%;height:100%;display:block;overflow:visible}
+/* D06 flèche en pointillés qui boucle */
+.fleche-main{position:absolute;width:var(--l,300px);height:var(--h,160px);color:var(--couleur,currentColor);transform:rotate(var(--rot,0deg));pointer-events:none}
+.fleche-main svg{width:100%;height:100%;display:block;overflow:visible}
+/* D07 chevron pointeur */
+.chevron-pointe{position:absolute;width:var(--d,70px);height:var(--d,70px);color:var(--couleur,var(--accent));transform:rotate(var(--rot,0deg))}
+/* D08 points de pagination */
+.points{display:inline-flex;gap:10px}
+.points i{width:var(--d,18px);height:var(--d,18px);border-radius:50%;background:currentColor;opacity:.45}
+.points i:first-child{opacity:1}
+/* D12 étincelle à quatre branches */
+.etincelle{position:absolute;width:var(--d,60px);height:var(--d,60px);color:var(--couleur,#fff);transform:rotate(var(--rot,0deg));filter:drop-shadow(0 0 14px currentColor)}
+/* D13 crédit vertical sur un bord */
+.credit-v{position:absolute;writing-mode:vertical-rl;transform:rotate(180deg);font-size:14px;letter-spacing:.14em;font-weight:600;opacity:.7;white-space:nowrap}
+/* D15 demi-cercle d'accent sur un bord */
+.demi-cercle{position:absolute;width:var(--d,260px);height:var(--d,260px);border-radius:50%;background:var(--couleur,var(--accent))}
+
+/* =====================================================================
+   H — HÉROS : personne, produit, maquettes
+   ===================================================================== */
+/* H01 personne détourée (PNG transparent). Ancrée en bas, coupée par le bord ou par le pied */
+.heros{position:absolute;height:var(--h,900px);width:auto;bottom:var(--bas,0px);filter:drop-shadow(0 30px 40px rgba(0,0,0,.35));pointer-events:none}
+/* H02 liseré de lumière de la couleur du fond autour du sujet */
+.heros.liseré,.heros.lisere{filter:drop-shadow(0 0 26px color-mix(in srgb,var(--couleur,var(--primaire)) 75%,transparent)) drop-shadow(0 30px 40px rgba(0,0,0,.35))}
+/* H10 le bas du sujet se fond dans le décor */
+.fondu-bas{-webkit-mask-image:linear-gradient(180deg,#000 var(--debut,72%),transparent 100%);mask-image:linear-gradient(180deg,#000 var(--debut,72%),transparent 100%)}
+.fondu-cote{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 var(--debut,22%));mask-image:linear-gradient(90deg,transparent 0%,#000 var(--debut,22%))}
+/* photo non détourée : dans un cadre */
+.cadre-photo{position:absolute;overflow:hidden;border-radius:var(--rayon);background:color-mix(in srgb,var(--primaire) 60%,#000)}
+.cadre-photo img{width:100%;height:100%;object-fit:cover;object-position:var(--cadrage,50% 20%)}
+.cadre-photo.arche{border-radius:999px 999px var(--rayon) var(--rayon)}
+.cadre-photo.cercle{border-radius:50%}
+.cadre-photo.lisere{outline:6px solid var(--couleur,var(--accent));outline-offset:8px}
+/* emplacement photo vide, pour les maquettes sans photo */
+.heros-vide{position:absolute;color:var(--couleur,rgba(255,255,255,.22))}
+.heros-vide svg{width:100%;height:100%;display:block}
+
+/* H05 téléphone : <div class="mk-telephone"><div class="ecran">…</div></div> */
+.mk-telephone{position:absolute;width:var(--l,420px);aspect-ratio:9/19.3;border-radius:calc(var(--l,420px)*.135);padding:calc(var(--l,420px)*.028);
+  background:linear-gradient(145deg,#2a2a2e,#0a0a0c 55%,#232327);
+  box-shadow:0 0 0 calc(var(--l,420px)*.008) var(--tranche,#c7a56a),0 0 0 calc(var(--l,420px)*.014) color-mix(in srgb,var(--tranche,#c7a56a) 55%,#000),
+    calc(var(--l,420px)*.07) calc(var(--l,420px)*.1) calc(var(--l,420px)*.16) -10px rgba(0,0,0,.6);
+  transform:rotate(var(--rot,0deg))}
+.mk-telephone .ecran{position:relative;width:100%;height:100%;border-radius:calc(var(--l,420px)*.108);overflow:hidden;background:#fff;color:#111}
+.mk-telephone .ecran>img{width:100%;height:100%;object-fit:cover;object-position:top}
+.mk-telephone::after{content:"";position:absolute;top:calc(var(--l,420px)*.052);left:50%;transform:translateX(-50%);width:28%;height:calc(var(--l,420px)*.062);border-radius:999px;background:#050506}
+/* H06 ordinateur portable */
+.mk-laptop{position:absolute;width:var(--l,760px)}
+.mk-laptop .ecran{position:relative;margin:0 6%;aspect-ratio:16/10;border-radius:22px 22px 0 0;padding:14px 14px 18px;background:#121214;box-shadow:0 0 0 2px #3a3a40;overflow:hidden}
+.mk-laptop .ecran>*{width:100%;height:100%;border-radius:8px;object-fit:cover;object-position:top;background:#fff;overflow:hidden}
+.mk-laptop .base{height:calc(var(--l,760px)*.034);border-radius:4px 4px 26px 26px;background:linear-gradient(180deg,#dadbe0,#8f9199 70%,#5e6068);position:relative;box-shadow:0 30px 40px -18px rgba(0,0,0,.6)}
+.mk-laptop .base::before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:16%;height:38%;border-radius:0 0 12px 12px;background:#6d6f77}
+/* fenêtre de navigateur */
+.mk-navigateur{position:absolute;width:var(--l,620px);border-radius:20px;overflow:hidden;background:#fff;color:#111;box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
+.mk-navigateur .barre-nav{display:flex;align-items:center;gap:10px;height:54px;padding:0 20px;background:#ECECEF}
+.mk-navigateur .barre-nav i{width:14px;height:14px;border-radius:50%;background:#FF5F57}
+.mk-navigateur .barre-nav i:nth-child(2){background:#FEBC2E}.mk-navigateur .barre-nav i:nth-child(3){background:#28C840}
+.mk-navigateur .barre-nav span{flex:1;margin-left:14px;height:30px;border-radius:999px;background:#fff;font-size:15px;line-height:30px;padding:0 16px;color:#555;white-space:nowrap;overflow:hidden}
+.mk-navigateur>img,.mk-navigateur>.page{display:block;width:100%}
+/* H04 livre et H03 boîte en volume. Le contenu de .couverture est du HTML libre */
+.mk-livre,.mk-boite{position:absolute;width:var(--l,380px);height:var(--h,520px);perspective:1800px;filter:drop-shadow(0 46px 36px rgba(0,0,0,.5))}
+.mk-livre .objet,.mk-boite .objet{position:relative;width:100%;height:100%;transform-style:preserve-3d;transform:rotateY(var(--tourne,-24deg)) rotateX(var(--bascule,3deg)) rotateZ(var(--rot,0deg))}
+.mk-livre .couverture,.mk-boite .couverture{position:absolute;inset:0;border-radius:var(--rc,6px 14px 14px 6px);overflow:hidden;background:var(--fond-couv,linear-gradient(160deg,#16193f,#07081c));color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9%;transform:translateZ(calc(var(--ep,46px)/2))}
+.mk-livre .couverture::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.42) 0,rgba(255,255,255,.14) 3.5%,rgba(0,0,0,.14) 6.5%,transparent 12%,transparent 70%,rgba(255,255,255,.07) 100%);pointer-events:none}
+/* tranche visible : les pages (livre) ou le côté de la boîte */
+.mk-livre .tranche,.mk-boite .tranche{position:absolute;top:1.2%;bottom:1.2%;right:0;width:var(--ep,46px);transform-origin:right center;transform:translateZ(calc(var(--ep,46px)/2)) rotateY(-90deg);
+  background:repeating-linear-gradient(90deg,#f4f1ea 0 2px,#d9d4c8 2px 4px)}
+.mk-boite .couverture{border-radius:4px;justify-content:flex-start;padding:0}
+.mk-boite .tranche{top:0;bottom:0;background:var(--cote,linear-gradient(90deg,#0c0c0e,#2b2b30))}
+.mk-boite .tranche.gauche,.mk-livre .tranche.gauche{right:auto;left:0;transform-origin:left center;transform:translateZ(calc(var(--ep,46px)/2)) rotateY(90deg)}
+/* dos du livre (visible quand --tourne est positif) */
+.mk-livre .tranche.gauche{top:0;bottom:0;background:var(--dos,linear-gradient(90deg,#05060f,#15183a))}
+.mk-boite .couverture::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(255,255,255,.16) 0%,transparent 38%,transparent 80%,rgba(0,0,0,.25) 100%);pointer-events:none}
+
+/* =====================================================================
+   G — LOGO
+   ===================================================================== */
+.logo{position:absolute;height:var(--h,70px);width:auto}
+/* G01 logo dans un rond clair cerclé */
+.logo-rond{position:absolute;display:grid;place-items:center;width:var(--d,200px);height:var(--d,200px);border-radius:50%;background:var(--clair);color:var(--encre);
+  box-shadow:0 0 0 calc(var(--d,200px)*.055) var(--anneau,var(--accent)),0 0 44px 4px color-mix(in srgb,var(--anneau,var(--accent)) 60%,transparent);overflow:hidden;text-align:center}
+.logo-rond img{width:74%;height:74%;object-fit:contain}
+/* G05 logo sur pastille claire */
+.logo-pastille{position:absolute;display:inline-flex;align-items:center;gap:12px;padding:12px 20px;border-radius:var(--rp,10px);background:var(--clair);color:var(--encre);font-weight:700;font-size:24px;white-space:nowrap}
+.logo-pastille img{height:44px;width:auto}
+/* G06 rangée de logos partenaires */
+.logos{display:flex;align-items:center;gap:var(--gap,28px)}
+.logos img{height:var(--h,54px);width:auto}
+/* logo en texte, quand le client n'a pas de fichier */
+.logo-texte{position:absolute;display:inline-flex;align-items:center;gap:12px;font-family:var(--f-titre);font-weight:800;font-size:30px;line-height:1;white-space:nowrap}
+.logo-texte small{display:block;font-family:var(--f-texte);font-weight:500;font-size:.5em;opacity:.8;margin-top:4px;letter-spacing:.02em}

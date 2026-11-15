@@ -1,0 +1,1740 @@
+{
+"licence": "Microsoft Fluent Emoji 3D, licence MIT (https://github.com/microsoft/fluentui-emoji). Images 256 px sur fond transparent.",
+"icones": [
+{
+"nom": "aiguille",
+"mots": [
+"couture",
+"tailleur"
+],
+"source": "Fluent Emoji : Sewing needle"
+},
+{
+"nom": "ampoule",
+"mots": [
+"idée",
+"astuce",
+"solution"
+],
+"source": "Fluent Emoji : Light bulb"
+},
+{
+"nom": "antenne",
+"mots": [
+"réseau",
+"signal",
+"internet"
+],
+"source": "Fluent Emoji : Satellite antenna"
+},
+{
+"nom": "appareil-photo",
+"mots": [
+"photo",
+"image"
+],
+"source": "Fluent Emoji : Camera"
+},
+{
+"nom": "appareil-photo-flash",
+"mots": [
+"photo",
+"shooting"
+],
+"source": "Fluent Emoji : Camera with flash"
+},
+{
+"nom": "applaudissements",
+"mots": [
+"bravo",
+"félicitations"
+],
+"source": "Fluent Emoji : Clapping hands"
+},
+{
+"nom": "arc-en-ciel",
+"mots": [
+"espoir",
+"couleurs"
+],
+"source": "Fluent Emoji : Rainbow"
+},
+{
+"nom": "artiste",
+"mots": [
+"art",
+"créatif"
+],
+"source": "Fluent Emoji : Artist"
+},
+{
+"nom": "avion",
+"mots": [
+"voyage",
+"visa",
+"international"
+],
+"source": "Fluent Emoji : Airplane"
+},
+{
+"nom": "avocat",
+"mots": [
+"alimentation",
+"santé"
+],
+"source": "Fluent Emoji : Avocado"
+},
+{
+"nom": "bague",
+"mots": [
+"mariage",
+"bijou"
+],
+"source": "Fluent Emoji : Ring"
+},
+{
+"nom": "baguette-magique",
+"mots": [
+"magie",
+"ia",
+"transformation"
+],
+"source": "Fluent Emoji : Magic wand"
+},
+{
+"nom": "balai",
+"mots": [
+"nettoyage",
+"ménage"
+],
+"source": "Fluent Emoji : Broom"
+},
+{
+"nom": "balance",
+"mots": [
+"justice",
+"droit",
+"comparaison"
+],
+"source": "Fluent Emoji : Balance scale"
+},
+{
+"nom": "ballon",
+"mots": [
+"fête",
+"anniversaire"
+],
+"source": "Fluent Emoji : Balloon"
+},
+{
+"nom": "ballon-basket",
+"mots": [
+"basket",
+"sport"
+],
+"source": "Fluent Emoji : Basketball"
+},
+{
+"nom": "ballon-foot",
+"mots": [
+"football",
+"sport"
+],
+"source": "Fluent Emoji : Soccer ball"
+},
+{
+"nom": "banque",
+"mots": [
+"banque",
+"finance"
+],
+"source": "Fluent Emoji : Bank"
+},
+{
+"nom": "basket",
+"mots": [
+"sport",
+"chaussure"
+],
+"source": "Fluent Emoji : Running shoe"
+},
+{
+"nom": "bateau",
+"mots": [
+"transport",
+"maritime"
+],
+"source": "Fluent Emoji : Ship"
+},
+{
+"nom": "batiment-classique",
+"mots": [
+"institution",
+"université",
+"banque"
+],
+"source": "Fluent Emoji : Classical building"
+},
+{
+"nom": "batterie",
+"mots": [
+"énergie",
+"autonomie"
+],
+"source": "Fluent Emoji : Battery"
+},
+{
+"nom": "bebe",
+"mots": [
+"bébé",
+"maternité"
+],
+"source": "Fluent Emoji : Baby"
+},
+{
+"nom": "biceps",
+"mots": [
+"force",
+"motivation",
+"sport"
+],
+"source": "Fluent Emoji : Flexed biceps"
+},
+{
+"nom": "billet-dollar",
+"mots": [
+"argent",
+"billet",
+"dollar"
+],
+"source": "Fluent Emoji : Dollar banknote"
+},
+{
+"nom": "billets-ailes",
+"mots": [
+"argent",
+"billets",
+"dépense",
+"gains"
+],
+"source": "Fluent Emoji : Money with wings"
+},
+{
+"nom": "billets-entree",
+"mots": [
+"billets",
+"entrée",
+"concert"
+],
+"source": "Fluent Emoji : Admission tickets"
+},
+{
+"nom": "boisson-chaude",
+"mots": [
+"café",
+"thé",
+"pause"
+],
+"source": "Fluent Emoji : Hot beverage"
+},
+{
+"nom": "bouclier",
+"mots": [
+"sécurité",
+"protection",
+"garantie"
+],
+"source": "Fluent Emoji : Shield"
+},
+{
+"nom": "bougie",
+"mots": [
+"veillée",
+"prière",
+"mémoire"
+],
+"source": "Fluent Emoji : Candle"
+},
+{
+"nom": "boule-confettis",
+"mots": [
+"fête",
+"célébration"
+],
+"source": "Fluent Emoji : Confetti ball"
+},
+{
+"nom": "boule-cristal",
+"mots": [
+"futur",
+"prédiction"
+],
+"source": "Fluent Emoji : Crystal ball"
+},
+{
+"nom": "boussole",
+"mots": [
+"orientation",
+"guide"
+],
+"source": "Fluent Emoji : Compass"
+},
+{
+"nom": "boutique",
+"mots": [
+"boutique",
+"magasin"
+],
+"source": "Fluent Emoji : Convenience store"
+},
+{
+"nom": "bras-mecanique",
+"mots": [
+"robotique",
+"ia",
+"force"
+],
+"source": "Fluent Emoji : Mechanical arm"
+},
+{
+"nom": "bulle-message",
+"mots": [
+"message",
+"commentaire",
+"chat"
+],
+"source": "Fluent Emoji : Speech balloon"
+},
+{
+"nom": "burger",
+"mots": [
+"fast-food",
+"restaurant"
+],
+"source": "Fluent Emoji : Hamburger"
+},
+{
+"nom": "bus",
+"mots": [
+"transport",
+"voyage"
+],
+"source": "Fluent Emoji : Bus"
+},
+{
+"nom": "caddie",
+"mots": [
+"achat",
+"boutique",
+"e-commerce"
+],
+"source": "Fluent Emoji : Shopping cart"
+},
+{
+"nom": "cadeau",
+"mots": [
+"cadeau",
+"bonus",
+"offert"
+],
+"source": "Fluent Emoji : Wrapped gift"
+},
+{
+"nom": "cadenas",
+"mots": [
+"sécurisé",
+"paiement sécurisé",
+"privé"
+],
+"source": "Fluent Emoji : Locked"
+},
+{
+"nom": "calendrier",
+"mots": [
+"date",
+"agenda",
+"événement"
+],
+"source": "Fluent Emoji : Calendar"
+},
+{
+"nom": "calendrier-spirale",
+"mots": [
+"date",
+"planning",
+"agenda"
+],
+"source": "Fluent Emoji : Spiral calendar"
+},
+{
+"nom": "camera-cinema",
+"mots": [
+"film",
+"vidéo",
+"cinéma"
+],
+"source": "Fluent Emoji : Movie camera"
+},
+{
+"nom": "camera-video",
+"mots": [
+"vidéo",
+"tournage"
+],
+"source": "Fluent Emoji : Video camera"
+},
+{
+"nom": "camion-livraison",
+"mots": [
+"livraison",
+"transport"
+],
+"source": "Fluent Emoji : Delivery truck"
+},
+{
+"nom": "carnet",
+"mots": [
+"carnet",
+"notes",
+"cours"
+],
+"source": "Fluent Emoji : Notebook"
+},
+{
+"nom": "carte-bancaire",
+"mots": [
+"carte",
+"paiement",
+"banque"
+],
+"source": "Fluent Emoji : Credit card"
+},
+{
+"nom": "carte-monde",
+"mots": [
+"monde",
+"voyage"
+],
+"source": "Fluent Emoji : World map"
+},
+{
+"nom": "casque",
+"mots": [
+"audio",
+"musique",
+"écoute"
+],
+"source": "Fluent Emoji : Headphone"
+},
+{
+"nom": "cent-points",
+"mots": [
+"100",
+"parfait",
+"score"
+],
+"source": "Fluent Emoji : Hundred points"
+},
+{
+"nom": "cerveau",
+"mots": [
+"intelligence",
+"apprendre",
+"ia"
+],
+"source": "Fluent Emoji : Brain"
+},
+{
+"nom": "chanteur",
+"mots": [
+"concert",
+"musique"
+],
+"source": "Fluent Emoji : Singer"
+},
+{
+"nom": "chronometre",
+"mots": [
+"rapide",
+"temps",
+"délai"
+],
+"source": "Fluent Emoji : Stopwatch"
+},
+{
+"nom": "cible",
+"mots": [
+"cible",
+"objectif",
+"précision"
+],
+"source": "Fluent Emoji : Bullseye"
+},
+{
+"nom": "ciseaux",
+"mots": [
+"coiffure",
+"couture"
+],
+"source": "Fluent Emoji : Scissors"
+},
+{
+"nom": "clap",
+"mots": [
+"vidéo",
+"montage",
+"tournage"
+],
+"source": "Fluent Emoji : Clapper board"
+},
+{
+"nom": "clavier",
+"mots": [
+"saisie",
+"informatique"
+],
+"source": "Fluent Emoji : Keyboard"
+},
+{
+"nom": "cle",
+"mots": [
+"clé",
+"accès",
+"secret"
+],
+"source": "Fluent Emoji : Key"
+},
+{
+"nom": "cle-plate",
+"mots": [
+"réparation",
+"mécanique"
+],
+"source": "Fluent Emoji : Wrench"
+},
+{
+"nom": "cloche",
+"mots": [
+"notification",
+"alerte",
+"rappel"
+],
+"source": "Fluent Emoji : Bell"
+},
+{
+"nom": "coche",
+"mots": [
+"validé",
+"ok"
+],
+"source": "Fluent Emoji : Check mark"
+},
+{
+"nom": "coche-verte",
+"mots": [
+"validé",
+"inclus",
+"ok"
+],
+"source": "Fluent Emoji : Check mark button"
+},
+{
+"nom": "coeur",
+"mots": [
+"amour",
+"j'aime",
+"passion"
+],
+"source": "Fluent Emoji : Red heart"
+},
+{
+"nom": "coeur-etincelant",
+"mots": [
+"amour",
+"coup de cœur"
+],
+"source": "Fluent Emoji : Sparkling heart"
+},
+{
+"nom": "colis",
+"mots": [
+"colis",
+"livraison",
+"produit"
+],
+"source": "Fluent Emoji : Package"
+},
+{
+"nom": "colombe",
+"mots": [
+"paix",
+"esprit",
+"église"
+],
+"source": "Fluent Emoji : Dove"
+},
+{
+"nom": "combine",
+"mots": [
+"appel",
+"contact",
+"téléphone"
+],
+"source": "Fluent Emoji : Telephone receiver"
+},
+{
+"nom": "comete",
+"mots": [
+"rapide",
+"étoile"
+],
+"source": "Fluent Emoji : Comet"
+},
+{
+"nom": "cotillons",
+"mots": [
+"fête",
+"célébration",
+"lancement"
+],
+"source": "Fluent Emoji : Party popper"
+},
+{
+"nom": "couronne",
+"mots": [
+"couronne",
+"premium",
+"roi"
+],
+"source": "Fluent Emoji : Crown"
+},
+{
+"nom": "couverts",
+"mots": [
+"restaurant",
+"repas"
+],
+"source": "Fluent Emoji : Fork and knife"
+},
+{
+"nom": "crayon",
+"mots": [
+"écrire",
+"rédaction",
+"design"
+],
+"source": "Fluent Emoji : Pencil"
+},
+{
+"nom": "croix",
+"mots": [
+"église",
+"foi",
+"chrétien"
+],
+"source": "Fluent Emoji : Latin cross"
+},
+{
+"nom": "croix-rouge",
+"mots": [
+"non",
+"erreur",
+"interdit"
+],
+"source": "Fluent Emoji : Cross mark"
+},
+{
+"nom": "cuisinier",
+"mots": [
+"chef",
+"restaurant",
+"cuisine"
+],
+"source": "Fluent Emoji : Cook"
+},
+{
+"nom": "danseur",
+"mots": [
+"danse",
+"soirée"
+],
+"source": "Fluent Emoji : Man dancing"
+},
+{
+"nom": "danseuse",
+"mots": [
+"danse",
+"soirée"
+],
+"source": "Fluent Emoji : Woman dancing"
+},
+{
+"nom": "diamant",
+"mots": [
+"diamant",
+"premium",
+"valeur"
+],
+"source": "Fluent Emoji : Gem stone"
+},
+{
+"nom": "diplome",
+"mots": [
+"diplôme",
+"formation",
+"certificat",
+"étudiant"
+],
+"source": "Fluent Emoji : Graduation cap"
+},
+{
+"nom": "doigt-bas",
+"mots": [
+"pointer",
+"ci-dessous",
+"action"
+],
+"source": "Fluent Emoji : Backhand index pointing down"
+},
+{
+"nom": "doigt-droite",
+"mots": [
+"pointer",
+"ici",
+"action"
+],
+"source": "Fluent Emoji : Backhand index pointing right"
+},
+{
+"nom": "doigt-haut",
+"mots": [
+"attention",
+"important"
+],
+"source": "Fluent Emoji : Index pointing up"
+},
+{
+"nom": "dossier",
+"mots": [
+"dossier",
+"fichiers",
+"documents"
+],
+"source": "Fluent Emoji : File folder"
+},
+{
+"nom": "eclair",
+"mots": [
+"éclair",
+"rapide",
+"énergie"
+],
+"source": "Fluent Emoji : High voltage"
+},
+{
+"nom": "ecole",
+"mots": [
+"école",
+"formation",
+"classe"
+],
+"source": "Fluent Emoji : School"
+},
+{
+"nom": "eglise",
+"mots": [
+"église",
+"culte"
+],
+"source": "Fluent Emoji : Church"
+},
+{
+"nom": "email",
+"mots": [
+"email",
+"mail",
+"contact"
+],
+"source": "Fluent Emoji : E-mail"
+},
+{
+"nom": "emoji-argent",
+"mots": [
+"argent",
+"gains"
+],
+"source": "Fluent Emoji : Money-mouth face"
+},
+{
+"nom": "emoji-etoiles",
+"mots": [
+"wow",
+"impressionnant"
+],
+"source": "Fluent Emoji : Star-struck"
+},
+{
+"nom": "emoji-fete",
+"mots": [
+"fête",
+"célébration"
+],
+"source": "Fluent Emoji : Partying face"
+},
+{
+"nom": "emoji-lunettes",
+"mots": [
+"cool",
+"confiance"
+],
+"source": "Fluent Emoji : Smiling face with sunglasses"
+},
+{
+"nom": "emoji-reflexion",
+"mots": [
+"question",
+"réfléchir"
+],
+"source": "Fluent Emoji : Thinking face"
+},
+{
+"nom": "employe-bureau",
+"mots": [
+"professionnel",
+"bureau"
+],
+"source": "Fluent Emoji : Office worker"
+},
+{
+"nom": "engrenage",
+"mots": [
+"réglages",
+"technique",
+"système"
+],
+"source": "Fluent Emoji : Gear"
+},
+{
+"nom": "enseignant",
+"mots": [
+"professeur",
+"formateur",
+"cours"
+],
+"source": "Fluent Emoji : Teacher"
+},
+{
+"nom": "enveloppe",
+"mots": [
+"courrier",
+"email",
+"invitation"
+],
+"source": "Fluent Emoji : Envelope"
+},
+{
+"nom": "epi-mais",
+"mots": [
+"agriculture",
+"maïs"
+],
+"source": "Fluent Emoji : Ear of corn"
+},
+{
+"nom": "epingle-lieu",
+"mots": [
+"adresse",
+"lieu",
+"localisation"
+],
+"source": "Fluent Emoji : Round pushpin"
+},
+{
+"nom": "eponge",
+"mots": [
+"nettoyage",
+"ménage"
+],
+"source": "Fluent Emoji : Sponge"
+},
+{
+"nom": "etincelles",
+"mots": [
+"étincelles",
+"magie",
+"nouveau",
+"ia"
+],
+"source": "Fluent Emoji : Sparkles"
+},
+{
+"nom": "etiquette-prix",
+"mots": [
+"prix",
+"promo",
+"étiquette"
+],
+"source": "Fluent Emoji : Label"
+},
+{
+"nom": "etoile",
+"mots": [
+"étoile",
+"note",
+"avis",
+"qualité"
+],
+"source": "Fluent Emoji : Star"
+},
+{
+"nom": "etoile-brillante",
+"mots": [
+"étoile",
+"brillant",
+"succès"
+],
+"source": "Fluent Emoji : Glowing star"
+},
+{
+"nom": "etoile-tournante",
+"mots": [
+"étoile",
+"effet"
+],
+"source": "Fluent Emoji : Dizzy"
+},
+{
+"nom": "etudiant",
+"mots": [
+"étudiant",
+"élève",
+"formation"
+],
+"source": "Fluent Emoji : Student"
+},
+{
+"nom": "explosion",
+"mots": [
+"choc",
+"promo",
+"boom"
+],
+"source": "Fluent Emoji : Collision"
+},
+{
+"nom": "feu",
+"mots": [
+"feu",
+"tendance",
+"chaud",
+"promo"
+],
+"source": "Fluent Emoji : Fire"
+},
+{
+"nom": "fichier-cartes",
+"mots": [
+"contacts",
+"organisation"
+],
+"source": "Fluent Emoji : Card index"
+},
+{
+"nom": "fil",
+"mots": [
+"couture",
+"tailleur"
+],
+"source": "Fluent Emoji : Thread"
+},
+{
+"nom": "fusee",
+"mots": [
+"fusée",
+"lancement",
+"croissance"
+],
+"source": "Fluent Emoji : Rocket"
+},
+{
+"nom": "gateau",
+"mots": [
+"anniversaire",
+"pâtisserie"
+],
+"source": "Fluent Emoji : Birthday cake"
+},
+{
+"nom": "gelule",
+"mots": [
+"médicament",
+"pharmacie",
+"santé"
+],
+"source": "Fluent Emoji : Pill"
+},
+{
+"nom": "gerbe-riz",
+"mots": [
+"agriculture",
+"récolte"
+],
+"source": "Fluent Emoji : Sheaf of rice"
+},
+{
+"nom": "globe-afrique",
+"mots": [
+"monde",
+"afrique",
+"international"
+],
+"source": "Fluent Emoji : Globe showing Europe-Africa"
+},
+{
+"nom": "globe-web",
+"mots": [
+"internet",
+"site",
+"web",
+"en ligne"
+],
+"source": "Fluent Emoji : Globe with meridians"
+},
+{
+"nom": "grand-magasin",
+"mots": [
+"magasin",
+"centre commercial"
+],
+"source": "Fluent Emoji : Department store"
+},
+{
+"nom": "graphique-baisse",
+"mots": [
+"baisse",
+"perte",
+"statistiques"
+],
+"source": "Fluent Emoji : Chart decreasing"
+},
+{
+"nom": "graphique-barres",
+"mots": [
+"statistiques",
+"résultats",
+"données"
+],
+"source": "Fluent Emoji : Bar chart"
+},
+{
+"nom": "graphique-hausse",
+"mots": [
+"croissance",
+"ventes",
+"statistiques"
+],
+"source": "Fluent Emoji : Chart increasing"
+},
+{
+"nom": "guitare",
+"mots": [
+"musique",
+"concert"
+],
+"source": "Fluent Emoji : Guitar"
+},
+{
+"nom": "haut-de-forme",
+"mots": [
+"élégance",
+"gala"
+],
+"source": "Fluent Emoji : Top hat"
+},
+{
+"nom": "haut-parleur",
+"mots": [
+"annonce",
+"publicité"
+],
+"source": "Fluent Emoji : Loudspeaker"
+},
+{
+"nom": "hopital",
+"mots": [
+"santé",
+"clinique"
+],
+"source": "Fluent Emoji : Hospital"
+},
+{
+"nom": "immeuble",
+"mots": [
+"entreprise",
+"bureau"
+],
+"source": "Fluent Emoji : Office building"
+},
+{
+"nom": "imprimante",
+"mots": [
+"impression",
+"imprimerie"
+],
+"source": "Fluent Emoji : Printer"
+},
+{
+"nom": "informaticien",
+"mots": [
+"développeur",
+"informatique",
+"tech"
+],
+"source": "Fluent Emoji : Technologist"
+},
+{
+"nom": "journal",
+"mots": [
+"actualité",
+"presse"
+],
+"source": "Fluent Emoji : Newspaper"
+},
+{
+"nom": "kaaba",
+"mots": [
+"islam",
+"pèlerinage"
+],
+"source": "Fluent Emoji : Kaaba"
+},
+{
+"nom": "lien",
+"mots": [
+"lien",
+"url",
+"site"
+],
+"source": "Fluent Emoji : Link"
+},
+{
+"nom": "lieu-culte",
+"mots": [
+"culte",
+"prière"
+],
+"source": "Fluent Emoji : Place of worship"
+},
+{
+"nom": "livre-ouvert",
+"mots": [
+"livre",
+"lecture",
+"guide"
+],
+"source": "Fluent Emoji : Open book"
+},
+{
+"nom": "livres",
+"mots": [
+"livres",
+"cours",
+"formation",
+"étude"
+],
+"source": "Fluent Emoji : Books"
+},
+{
+"nom": "loupe",
+"mots": [
+"recherche",
+"trouver",
+"analyse"
+],
+"source": "Fluent Emoji : Magnifying glass tilted left"
+},
+{
+"nom": "main-salut",
+"mots": [
+"bonjour",
+"bienvenue"
+],
+"source": "Fluent Emoji : Waving hand"
+},
+{
+"nom": "main-victoire",
+"mots": [
+"victoire",
+"paix"
+],
+"source": "Fluent Emoji : Victory hand"
+},
+{
+"nom": "mains-jointes",
+"mots": [
+"prière",
+"merci",
+"église"
+],
+"source": "Fluent Emoji : Folded hands"
+},
+{
+"nom": "mains-levees",
+"mots": [
+"joie",
+"victoire",
+"louange"
+],
+"source": "Fluent Emoji : Raising hands"
+},
+{
+"nom": "maison",
+"mots": [
+"maison",
+"immobilier",
+"accueil"
+],
+"source": "Fluent Emoji : House"
+},
+{
+"nom": "mallette",
+"mots": [
+"travail",
+"business",
+"emploi"
+],
+"source": "Fluent Emoji : Briefcase"
+},
+{
+"nom": "manette",
+"mots": [
+"jeu vidéo",
+"gaming"
+],
+"source": "Fluent Emoji : Video game"
+},
+{
+"nom": "marmite",
+"mots": [
+"cuisine",
+"restaurant",
+"repas"
+],
+"source": "Fluent Emoji : Pot of food"
+},
+{
+"nom": "marque-page",
+"mots": [
+"favori",
+"enregistrer"
+],
+"source": "Fluent Emoji : Bookmark"
+},
+{
+"nom": "marteau-cle",
+"mots": [
+"outils",
+"réparation",
+"service"
+],
+"source": "Fluent Emoji : Hammer and wrench"
+},
+{
+"nom": "mecanicien",
+"mots": [
+"garage",
+"réparation"
+],
+"source": "Fluent Emoji : Mechanic"
+},
+{
+"nom": "medaille",
+"mots": [
+"médaille",
+"récompense"
+],
+"source": "Fluent Emoji : Sports medal"
+},
+{
+"nom": "medaille-or",
+"mots": [
+"médaille",
+"premier",
+"meilleur"
+],
+"source": "Fluent Emoji : 1st place medal"
+},
+{
+"nom": "megaphone",
+"mots": [
+"annonce",
+"publicité",
+"promo"
+],
+"source": "Fluent Emoji : Megaphone"
+},
+{
+"nom": "memo",
+"mots": [
+"notes",
+"écriture",
+"rédaction"
+],
+"source": "Fluent Emoji : Memo"
+},
+{
+"nom": "micro",
+"mots": [
+"micro",
+"chant",
+"podcast"
+],
+"source": "Fluent Emoji : Microphone"
+},
+{
+"nom": "micro-studio",
+"mots": [
+"podcast",
+"voix",
+"audio"
+],
+"source": "Fluent Emoji : Studio microphone"
+},
+{
+"nom": "mosquee",
+"mots": [
+"mosquée",
+"culte"
+],
+"source": "Fluent Emoji : Mosque"
+},
+{
+"nom": "moto",
+"mots": [
+"moto",
+"livraison"
+],
+"source": "Fluent Emoji : Motorcycle"
+},
+{
+"nom": "note-musique",
+"mots": [
+"musique",
+"son"
+],
+"source": "Fluent Emoji : Musical note"
+},
+{
+"nom": "nuage",
+"mots": [
+"cloud",
+"stockage"
+],
+"source": "Fluent Emoji : Cloud"
+},
+{
+"nom": "ordinateur-bureau",
+"mots": [
+"ordinateur",
+"pc",
+"informatique"
+],
+"source": "Fluent Emoji : Desktop computer"
+},
+{
+"nom": "ordinateur-portable",
+"mots": [
+"ordinateur",
+"pc",
+"informatique",
+"en ligne"
+],
+"source": "Fluent Emoji : Laptop"
+},
+{
+"nom": "pain",
+"mots": [
+"boulangerie",
+"alimentation"
+],
+"source": "Fluent Emoji : Bread"
+},
+{
+"nom": "palette-peinture",
+"mots": [
+"art",
+"design",
+"créativité"
+],
+"source": "Fluent Emoji : Artist palette"
+},
+{
+"nom": "palmier",
+"mots": [
+"vacances",
+"plage",
+"tourisme"
+],
+"source": "Fluent Emoji : Palm tree"
+},
+{
+"nom": "pellicule",
+"mots": [
+"film",
+"vidéo",
+"montage"
+],
+"source": "Fluent Emoji : Film frames"
+},
+{
+"nom": "personne-smoking",
+"mots": [
+"gala",
+"soirée",
+"mariage"
+],
+"source": "Fluent Emoji : Person in tuxedo"
+},
+{
+"nom": "piece",
+"mots": [
+"pièce",
+"argent",
+"monnaie"
+],
+"source": "Fluent Emoji : Coin"
+},
+{
+"nom": "piece-puzzle",
+"mots": [
+"solution",
+"stratégie"
+],
+"source": "Fluent Emoji : Puzzle piece"
+},
+{
+"nom": "pinceau",
+"mots": [
+"peinture",
+"design",
+"art"
+],
+"source": "Fluent Emoji : Paintbrush"
+},
+{
+"nom": "pizza",
+"mots": [
+"restaurant",
+"livraison"
+],
+"source": "Fluent Emoji : Pizza"
+},
+{
+"nom": "poele",
+"mots": [
+"cuisine",
+"recette"
+],
+"source": "Fluent Emoji : Cooking"
+},
+{
+"nom": "poignee-main",
+"mots": [
+"accord",
+"partenariat",
+"confiance"
+],
+"source": "Fluent Emoji : Handshake"
+},
+{
+"nom": "pompe-essence",
+"mots": [
+"carburant",
+"station"
+],
+"source": "Fluent Emoji : Fuel pump"
+},
+{
+"nom": "pouce-leve",
+"mots": [
+"like",
+"j'aime",
+"approuvé"
+],
+"source": "Fluent Emoji : Thumbs up"
+},
+{
+"nom": "pousse",
+"mots": [
+"croissance",
+"agriculture",
+"écologie"
+],
+"source": "Fluent Emoji : Seedling"
+},
+{
+"nom": "presse-papiers",
+"mots": [
+"liste",
+"programme",
+"checklist"
+],
+"source": "Fluent Emoji : Clipboard"
+},
+{
+"nom": "prise",
+"mots": [
+"électricité",
+"énergie"
+],
+"source": "Fluent Emoji : Electric plug"
+},
+{
+"nom": "punaise",
+"mots": [
+"épingle",
+"important"
+],
+"source": "Fluent Emoji : Pushpin"
+},
+{
+"nom": "radio",
+"mots": [
+"radio",
+"audio",
+"média"
+],
+"source": "Fluent Emoji : Radio"
+},
+{
+"nom": "recu",
+"mots": [
+"facture",
+"reçu",
+"paiement"
+],
+"source": "Fluent Emoji : Receipt"
+},
+{
+"nom": "reveil",
+"mots": [
+"heure",
+"urgence",
+"délai"
+],
+"source": "Fluent Emoji : Alarm clock"
+},
+{
+"nom": "robe",
+"mots": [
+"mode",
+"couture"
+],
+"source": "Fluent Emoji : Dress"
+},
+{
+"nom": "robot",
+"mots": [
+"ia",
+"intelligence artificielle",
+"automatisation"
+],
+"source": "Fluent Emoji : Robot"
+},
+{
+"nom": "rouge-a-levres",
+"mots": [
+"beauté",
+"maquillage"
+],
+"source": "Fluent Emoji : Lipstick"
+},
+{
+"nom": "sablier",
+"mots": [
+"temps",
+"délai",
+"urgence"
+],
+"source": "Fluent Emoji : Hourglass done"
+},
+{
+"nom": "sac-argent",
+"mots": [
+"argent",
+"revenus",
+"gains"
+],
+"source": "Fluent Emoji : Money bag"
+},
+{
+"nom": "sacs-shopping",
+"mots": [
+"achat",
+"boutique",
+"mode"
+],
+"source": "Fluent Emoji : Shopping bags"
+},
+{
+"nom": "savon",
+"mots": [
+"hygiène",
+"cosmétique"
+],
+"source": "Fluent Emoji : Soap"
+},
+{
+"nom": "seau",
+"mots": [
+"nettoyage",
+"ménage"
+],
+"source": "Fluent Emoji : Bucket"
+},
+{
+"nom": "signe-dollar",
+"mots": [
+"argent",
+"prix",
+"dollar"
+],
+"source": "Fluent Emoji : Heavy dollar sign"
+},
+{
+"nom": "soignant",
+"mots": [
+"santé",
+"médecin",
+"infirmier"
+],
+"source": "Fluent Emoji : Health worker"
+},
+{
+"nom": "soleil",
+"mots": [
+"soleil",
+"été"
+],
+"source": "Fluent Emoji : Sun"
+},
+{
+"nom": "stethoscope",
+"mots": [
+"santé",
+"médecin"
+],
+"source": "Fluent Emoji : Stethoscope"
+},
+{
+"nom": "t-shirt",
+"mots": [
+"vêtement",
+"mode"
+],
+"source": "Fluent Emoji : T-shirt"
+},
+{
+"nom": "taxi",
+"mots": [
+"transport",
+"vtc"
+],
+"source": "Fluent Emoji : Taxi"
+},
+{
+"nom": "telephone",
+"mots": [
+"téléphone",
+"mobile",
+"smartphone"
+],
+"source": "Fluent Emoji : Mobile phone"
+},
+{
+"nom": "telephone-fleche",
+"mots": [
+"téléphone",
+"appel",
+"contact"
+],
+"source": "Fluent Emoji : Mobile phone with arrow"
+},
+{
+"nom": "television",
+"mots": [
+"tv",
+"écran",
+"média"
+],
+"source": "Fluent Emoji : Television"
+},
+{
+"nom": "ticket",
+"mots": [
+"billet",
+"entrée",
+"événement"
+],
+"source": "Fluent Emoji : Ticket"
+},
+{
+"nom": "tomate",
+"mots": [
+"légumes",
+"alimentation"
+],
+"source": "Fluent Emoji : Tomato"
+},
+{
+"nom": "tracteur",
+"mots": [
+"agriculture",
+"ferme"
+],
+"source": "Fluent Emoji : Tractor"
+},
+{
+"nom": "trophee",
+"mots": [
+"trophée",
+"victoire",
+"gagnant"
+],
+"source": "Fluent Emoji : Trophy"
+},
+{
+"nom": "usine",
+"mots": [
+"industrie",
+"production"
+],
+"source": "Fluent Emoji : Factory"
+},
+{
+"nom": "vernis",
+"mots": [
+"beauté",
+"manucure"
+],
+"source": "Fluent Emoji : Nail polish"
+},
+{
+"nom": "voiture",
+"mots": [
+"voiture",
+"auto",
+"transport"
+],
+"source": "Fluent Emoji : Automobile"
+},
+{
+"nom": "yeux",
+"mots": [
+"regarde",
+"attention"
+],
+"source": "Fluent Emoji : Eyes"
+}
+]
+}
