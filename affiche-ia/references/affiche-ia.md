@@ -385,6 +385,7 @@ jamais sur le texte.
 | H08 | Photo plein cadre | Voir F11 | 07 | `.fond-photo` |
 | H09 | Héros dans une carte | La personne sort d'une carte de couleur : épaules dans la carte, tête au-dessus | 17 | `.panneau.plein` + `.heros` au-dessus |
 | H10 | Bas fondu | Le bas du héros se dissout dans le fond | 15 | `.fondu-bas` |
+| H12 | Bords fondus | Les bords coupés d'une photo (épaules tranchées par le cadre d'origine) s'effacent dans le fond | — (ajout) | `.fondu` (`--fg` `--fd` `--fb`) |
 | H11 | Photo encadrée | Photo non détourée dans une arche, un cercle ou un rectangle arrondi | — (ajout) | `.cadre-photo` (`.arche` `.cercle` `.lisere`) |
 
 Relevé : le héros occupe 45 à 60 % de la hauteur ; sa tête est dans le tiers haut ou au centre ; son regard ou

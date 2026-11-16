@@ -547,6 +547,10 @@ html,body{margin:0;padding:0;background:#17171b}
 /* H10 le bas du sujet se fond dans le décor */
 .fondu-bas{-webkit-mask-image:linear-gradient(180deg,#000 var(--debut,72%),transparent 100%);mask-image:linear-gradient(180deg,#000 var(--debut,72%),transparent 100%)}
 .fondu-cote{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 var(--debut,22%));mask-image:linear-gradient(90deg,transparent 0%,#000 var(--debut,22%))}
+/* H12 fondu réglable sur les bords d'une photo : --fg gauche, --fd droite (largeurs du fondu), --fb début du fondu bas.
+   Sert à cacher les bords coupés d'une photo détourée (épaules coupées par le cadre d'origine). */
+.fondu{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--fg,0%),#000 calc(100% - var(--fd,0%)),transparent 100%),linear-gradient(180deg,#000 var(--fb,100%),transparent 100%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 var(--fg,0%),#000 calc(100% - var(--fd,0%)),transparent 100%),linear-gradient(180deg,#000 var(--fb,100%),transparent 100%);mask-composite:intersect}
 /* photo non détourée : dans un cadre */
 .cadre-photo{position:absolute;overflow:hidden;border-radius:var(--rayon);background:color-mix(in srgb,var(--primaire) 60%,#000)}
 .cadre-photo img{width:100%;height:100%;object-fit:cover;object-position:var(--cadrage,50% 20%)}
